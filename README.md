@@ -17,6 +17,15 @@ atendimento às terças e quintas das 18h às 19h; quartas mediante agendamento 
 | `mapa.html` | Planta do campus, com salas clicáveis |
 | `sobre.html` | O que é o NAE e o que ele faz |
 | `contato.html` | Sala do NAE, atendimento e contatos da unidade |
+| `cartaz.html` | Cartaz A4 + 4 cartões para imprimir, com QR code do site |
+
+### Cartaz
+
+Abra `cartaz.html` e use **Imprimir** (Ctrl+P) em papel A4, escala 100%, sem
+"ajustar à página". Saem duas folhas: o cartaz de parede e uma folha com quatro
+cartões menores para recortar. O QR code é gerado dentro da própria página
+(nível de correção H, versão 5) e aponta para a raiz do site — se o endereço do
+site mudar, altere `URL_SITE` no final de `cartaz.html`.
 
 ## Estrutura
 

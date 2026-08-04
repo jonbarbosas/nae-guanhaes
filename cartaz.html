@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartaz para imprimir — NAE Guanhães | UEMG</title>
+<meta name="description" content="Cartaz A4 e cartões de parede com QR code do site do NAE — UEMG Unidade Guanhães.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<style>
+  :root {
+    --navy:   #0B3251;
+    --blue:   #1A6BA0;
+    --cyan:   #1D93A9;
+    --aqua:   #57C0CE;
+    --green:  #2C9560;
+    --amber:  #D08D18;
+    --gold:   #F2C14E;
+    --orange: #D1642B;
+    --ink:    #0C1E2C;
+    --ink-2:  #274257;
+    --muted:  #5A7288;
+    --line:   #D8E4ED;
+
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Cambria, Georgia, "Times New Roman", serif;
+    --sans:  "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    --mono:  ui-monospace, "Cascadia Mono", Consolas, "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #E7EDF3;
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── Barra de ações (some na impressão) ─────────────── */
+  .barra {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; flex-wrap: wrap; align-items: center; gap: .8rem;
+    padding: .9rem 1.2rem;
+    background: #fff; border-bottom: 1px solid var(--line);
+    font-size: .9rem; color: var(--ink-2);
+  }
+  .barra b { color: var(--navy); }
+  .barra .btn {
+    margin-left: auto;
+    background: var(--navy); color: #fff; border: 0; border-radius: 999px;
+    font-family: var(--sans); font-size: .9rem; font-weight: 650;
+    padding: .55rem 1.3rem; cursor: pointer;
+  }
+  .barra .btn:hover { filter: brightness(1.15); }
+  .barra a { color: var(--blue); }
+
+  /* ── Folhas ─────────────────────────────────────────── */
+  .folha {
+    width: 210mm; height: 297mm;
+    margin: 10mm auto; padding: 12mm 13mm;
+    background: #fff;
+    box-shadow: 0 4px 26px rgba(11,50,81,.16);
+    display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+  }
+  .folha + .folha { margin-top: 0; }
+
+  /* ── Cabeçalho do cartaz ────────────────────────────── */
+  .topo { display: flex; align-items: center; gap: 5mm; }
+  .marca-nome { font-family: var(--serif); font-size: 15mm; font-weight: 700; letter-spacing: .04em; color: var(--navy); line-height: 1; }
+  .marca-sub { font-size: 3.4mm; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-top: 1.5mm; }
+  .topo .uni { margin-left: auto; text-align: right; font-size: 3.4mm; color: var(--muted); line-height: 1.5; }
+  .topo .uni b { color: var(--ink-2); display: block; font-size: 3.8mm; }
+
+  .faixa {
+    height: 2.2mm; margin: 5mm 0 0;
+    background: linear-gradient(90deg, var(--amber) 0 25%, var(--green) 25% 50%, var(--aqua) 50% 75%, var(--orange) 75% 100%);
+    border-radius: 2mm;
+  }
+
+  /* ── Chamada ────────────────────────────────────────── */
+  .chamada { text-align: center; margin-top: 6mm; }
+  .chamada .olho {
+    font-size: 3.4mm; font-weight: 800; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--orange);
+  }
+  .chamada h1 {
+    font-family: var(--serif); font-weight: 600;
+    font-size: 11.5mm; line-height: 1.06; letter-spacing: -.01em;
+    margin: 2mm 0 0; color: var(--navy); text-wrap: balance;
+  }
+  .chamada p { font-size: 4.3mm; color: var(--ink-2); margin: 3mm auto 0; max-width: 145mm; }
+
+  /* ── QR ─────────────────────────────────────────────── */
+  .qr-area { display: flex; justify-content: center; margin-top: 3mm; }
+  .qr-area svg { width: 86mm; height: 86mm; display: block; }
+  .cartao .qr-area svg { width: 52mm; height: 52mm; }
+
+  .endereco {
+    text-align: center; margin-top: 3.5mm;
+  }
+  .endereco .rot { font-size: 3.1mm; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .endereco .url {
+    font-family: var(--mono); font-size: 5.4mm; color: var(--navy);
+    margin-top: 1mm; word-break: break-all; font-weight: 600;
+  }
+
+  /* ── O que tem lá dentro ────────────────────────────── */
+  .itens {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm 4mm;
+    margin-top: 5mm;
+  }
+  .item {
+    display: flex; align-items: center; gap: 3mm;
+    border: .4mm solid var(--linha, var(--line));
+    border-left: 1.4mm solid var(--c);
+    border-radius: 2.5mm; padding: 2.4mm 3.4mm;
+  }
+  .item .ic { width: 7mm; height: 7mm; flex: none; color: var(--c); }
+  .item .tx { font-size: 3.8mm; font-weight: 650; color: var(--ink); line-height: 1.25; }
+  .item .tx small { display: block; font-size: 3.05mm; font-weight: 400; color: var(--muted); margin-top: .5mm; }
+
+  /* ── Rodapé do cartaz ───────────────────────────────── */
+  .rodape { margin-top: auto; padding-top: 5mm; }
+  .nae-box {
+    display: flex; align-items: center; gap: 4mm;
+    background: #FCF4E8; border: .4mm solid #EBD6AE;
+    border-radius: 3mm; padding: 4mm 5mm;
+  }
+  .nae-box .ic { width: 9mm; height: 9mm; flex: none; color: var(--orange); }
+  .nae-box .tx { font-size: 3.6mm; color: var(--ink-2); line-height: 1.4; }
+  .nae-box .tx b { color: var(--navy); }
+  .assina {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 4mm;
+    margin-top: 4mm; font-size: 3.2mm; color: var(--muted);
+  }
+  .assina .dev { font-family: var(--serif); font-size: 3.8mm; color: var(--ink-2); }
+  .assina .dev b { color: var(--navy); }
+
+  /* ── Folha 2: cartões ───────────────────────────────── */
+  .cartoes {
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+    gap: 6mm; flex: 1;
+  }
+  .cartao {
+    border: .3mm dashed #B9C9D6; border-radius: 3mm;
+    padding: 6mm 5mm; text-align: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  }
+  .cartao .cab { display: flex; align-items: center; gap: 2.5mm; }
+  .cartao .cab .nm { font-family: var(--serif); font-size: 7mm; font-weight: 700; color: var(--navy); line-height: 1; letter-spacing: .04em; }
+  .cartao .cab .sb { font-size: 2.5mm; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-top: 1mm; }
+  .cartao .titulo { font-family: var(--serif); font-size: 5.4mm; color: var(--navy); line-height: 1.15; margin-top: 2mm; }
+  .cartao .url { font-family: var(--mono); font-size: 3.1mm; color: var(--ink-2); word-break: break-all; }
+  .cartao .pe { font-size: 2.9mm; color: var(--muted); line-height: 1.4; }
+  .cartao .pe b { color: var(--ink-2); }
+
+  .aviso-corte { text-align: center; font-size: 3mm; color: var(--muted); margin-bottom: 4mm; letter-spacing: .1em; text-transform: uppercase; }
+
+  /* ── Impressão ──────────────────────────────────────── */
+  @page { size: A4 portrait; margin: 0; }
+
+  @media print {
+    body { background: #fff; }
+    .barra { display: none; }
+    .folha {
+      margin: 0; box-shadow: none;
+      width: 210mm; height: 296.4mm; page-break-after: always;
+    }
+    .folha:last-child { page-break-after: auto; }
+  }
+
+  @media (max-width: 230mm) {
+    .folha { width: 100%; min-height: 0; padding: 8mm 6mm; }
+    .qr-area svg { width: min(90vw, 108mm); height: auto; }
+    .itens { grid-template-columns: 1fr; }
+    .cartoes { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="barra">
+  <span><b>Cartaz do NAE.</b> Folha 1: cartaz A4 para a parede. Folha 2: quatro cartões menores para recortar.</span>
+  <span>Imprima em papel A4, sem redimensionar (escala 100%).</span>
+  <button class="btn" type="button" onclick="window.print()">Imprimir</button>
+</div>
+
+<!-- ══════════ FOLHA 1 — CARTAZ ══════════ -->
+<section class="folha">
+
+  <div class="topo">
+    <svg width="72" height="72" viewBox="0 0 64 64" role="img" aria-label="Símbolo do NAE">
+      <circle cx="32" cy="32" r="31" fill="#0B3251"></circle>
+      <circle cx="32" cy="17.5" r="3.9" fill="#F2C14E"></circle>
+      <path d="M13 29C19 24.6 26 25.6 30.6 29.4v18.2C26 43.9 19 43.2 13 46.9z" fill="#FFFFFF"></path>
+      <path d="M51 29c-6-4.4-13-3.4-17.6.4v18.2C38 43.9 45 43.2 51 46.9z" fill="#F2C14E"></path>
+    </svg>
+    <div>
+      <div class="marca-nome">NAE</div>
+      <div class="marca-sub">Núcleo de Apoio Estudantil</div>
+    </div>
+    <div class="uni">
+      <b>UEMG — Unidade Guanhães</b>
+      Coordenação: Jonatan Barbosa Silva
+    </div>
+  </div>
+
+  <div class="faixa"></div>
+
+  <div class="chamada">
+    <div class="olho">Aponte a câmera do celular</div>
+    <h1>Tudo o que o estudante precisa, em um lugar só</h1>
+    <p>E-mail institucional, horários das aulas, mapa do campus e o atendimento do Núcleo.</p>
+  </div>
+
+  <div class="qr-area" data-qr></div>
+
+  <div class="endereco">
+    <div class="rot">Ou digite no navegador</div>
+    <div class="url">jonbarbosas.github.io/nae-guanhaes</div>
+  </div>
+
+  <div class="itens">
+    <div class="item" style="--c: var(--blue)">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect><path d="M3 7l9 6 9-6"></path>
+      </svg>
+      <span class="tx">Ajuda com E-mail Institucional<small>Primeiro acesso e troca de senha, em 10 passos ilustrados</small></span>
+    </div>
+    <div class="item" style="--c: var(--cyan)">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4.5" width="18" height="16" rx="2.5"></rect><path d="M3 9.5h18M8 2.5v4M16 2.5v4M7.5 13.5h3M7.5 17h6"></path>
+      </svg>
+      <span class="tx">Horários de Aulas 2026.2<small>Direito e Engenharia Civil, com busca por disciplina</small></span>
+    </div>
+    <div class="item" style="--c: var(--green)">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 6.5l6-2.5 6 2.5 6-2.5v13l-6 2.5-6-2.5-6 2.5z"></path><path d="M9 4v13M15 6.5v13"></path>
+      </svg>
+      <span class="tx">Mapa do Campus<small>Onde fica cada sala, laboratório e serviço</small></span>
+    </div>
+    <div class="item" style="--c: var(--orange)">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21s7-5.4 7-11a7 7 0 10-14 0c0 5.6 7 11 7 11z"></path><circle cx="12" cy="10" r="2.6"></circle>
+      </svg>
+      <span class="tx">Fale com o NAE<small>Sala, horários de atendimento e contato</small></span>
+    </div>
+  </div>
+
+  <div class="rodape">
+    <div class="nae-box">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 21V8.5L12 3l9 5.5V21"></path><path d="M2 21h20"></path><path d="M9.5 21v-6h5v6"></path>
+      </svg>
+      <span class="tx">
+        A sala do NAE fica no <b>Prédio do Administrativo</b>.<br>
+        Atendimento às <b>terças e quintas, das 18h às 19h</b> — às quartas, com agendamento prévio por <b>nae.guanhaes@uemg.br</b>.
+      </span>
+    </div>
+    <div class="assina">
+      <span>UEMG — Unidade Guanhães · Rodovia BR-259, nº 2250, Bairro Nova União, Guanhães/MG</span>
+      <span class="dev">Desenvolvido por <b>Jonatan Barbosa Silva</b></span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════ FOLHA 2 — CARTÕES ══════════ -->
+<section class="folha">
+  <p class="aviso-corte">Recorte pelas linhas tracejadas — quatro cartões para colar em salas, mural e secretaria</p>
+
+  <div class="cartoes">
+
+    <div class="cartao">
+      <div class="cab">
+        <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="31" fill="#0B3251"></circle>
+          <circle cx="32" cy="17.5" r="3.9" fill="#F2C14E"></circle>
+          <path d="M13 29C19 24.6 26 25.6 30.6 29.4v18.2C26 43.9 19 43.2 13 46.9z" fill="#FFFFFF"></path>
+          <path d="M51 29c-6-4.4-13-3.4-17.6.4v18.2C38 43.9 45 43.2 51 46.9z" fill="#F2C14E"></path>
+        </svg>
+        <div style="text-align:left">
+          <div class="nm">NAE</div>
+          <div class="sb">Guanhães</div>
+        </div>
+      </div>
+      <div class="titulo">E-mail, horários e mapa do campus</div>
+      <div class="qr-area" data-qr></div>
+      <div class="url">jonbarbosas.github.io/nae-guanhaes</div>
+      <div class="pe"><b>Sala do NAE:</b> Prédio do Administrativo<br>Terças e quintas, 18h–19h</div>
+    </div>
+
+    <div class="cartao">
+      <div class="cab">
+        <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="31" fill="#0B3251"></circle>
+          <circle cx="32" cy="17.5" r="3.9" fill="#F2C14E"></circle>
+          <path d="M13 29C19 24.6 26 25.6 30.6 29.4v18.2C26 43.9 19 43.2 13 46.9z" fill="#FFFFFF"></path>
+          <path d="M51 29c-6-4.4-13-3.4-17.6.4v18.2C38 43.9 45 43.2 51 46.9z" fill="#F2C14E"></path>
+        </svg>
+        <div style="text-align:left">
+          <div class="nm">NAE</div>
+          <div class="sb">Guanhães</div>
+        </div>
+      </div>
+      <div class="titulo">E-mail, horários e mapa do campus</div>
+      <div class="qr-area" data-qr></div>
+      <div class="url">jonbarbosas.github.io/nae-guanhaes</div>
+      <div class="pe"><b>Sala do NAE:</b> Prédio do Administrativo<br>Terças e quintas, 18h–19h</div>
+    </div>
+
+    <div class="cartao">
+      <div class="cab">
+        <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="31" fill="#0B3251"></circle>
+          <circle cx="32" cy="17.5" r="3.9" fill="#F2C14E"></circle>
+          <path d="M13 29C19 24.6 26 25.6 30.6 29.4v18.2C26 43.9 19 43.2 13 46.9z" fill="#FFFFFF"></path>
+          <path d="M51 29c-6-4.4-13-3.4-17.6.4v18.2C38 43.9 45 43.2 51 46.9z" fill="#F2C14E"></path>
+        </svg>
+        <div style="text-align:left">
+          <div class="nm">NAE</div>
+          <div class="sb">Guanhães</div>
+        </div>
+      </div>
+      <div class="titulo">E-mail, horários e mapa do campus</div>
+      <div class="qr-area" data-qr></div>
+      <div class="url">jonbarbosas.github.io/nae-guanhaes</div>
+      <div class="pe"><b>Sala do NAE:</b> Prédio do Administrativo<br>Terças e quintas, 18h–19h</div>
+    </div>
+
+    <div class="cartao">
+      <div class="cab">
+        <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="31" fill="#0B3251"></circle>
+          <circle cx="32" cy="17.5" r="3.9" fill="#F2C14E"></circle>
+          <path d="M13 29C19 24.6 26 25.6 30.6 29.4v18.2C26 43.9 19 43.2 13 46.9z" fill="#FFFFFF"></path>
+          <path d="M51 29c-6-4.4-13-3.4-17.6.4v18.2C38 43.9 45 43.2 51 46.9z" fill="#F2C14E"></path>
+        </svg>
+        <div style="text-align:left">
+          <div class="nm">NAE</div>
+          <div class="sb">Guanhães</div>
+        </div>
+      </div>
+      <div class="titulo">E-mail, horários e mapa do campus</div>
+      <div class="qr-area" data-qr></div>
+      <div class="url">jonbarbosas.github.io/nae-guanhaes</div>
+      <div class="pe"><b>Sala do NAE:</b> Prédio do Administrativo<br>Terças e quintas, 18h–19h</div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   Gerador de QR Code (modo byte, correção de erro nível H)
+   Escrito para este cartaz — sem dependências externas.
+   ═══════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  var URL_SITE = 'https://jonbarbosas.github.io/nae-guanhaes/';
+
+  /* ── Aritmética em GF(256) ────────────────────────── */
+  var EXP = new Array(512), LOG = new Array(256);
+  (function () {
+    var x = 1;
+    for (var i = 0; i < 255; i++) { EXP[i] = x; LOG[x] = i; x <<= 1; if (x & 0x100) x ^= 0x11D; }
+    for (var j = 255; j < 512; j++) EXP[j] = EXP[j - 255];
+  })();
+  function mul(a, b) { return (a === 0 || b === 0) ? 0 : EXP[LOG[a] + LOG[b]]; }
+
+  function polGerador(n) {
+    var p = [1];
+    for (var i = 0; i < n; i++) {
+      var q = new Array(p.length + 1);
+      for (var k = 0; k < q.length; k++) q[k] = 0;
+      for (var j = 0; j < p.length; j++) {
+        q[j] ^= p[j];
+        q[j + 1] ^= mul(p[j], EXP[i]);
+      }
+      p = q;
+    }
+    return p;
+  }
+
+  function correcao(dados, n) {
+    var g = polGerador(n);
+    var r = dados.slice();
+    for (var i = 0; i < n; i++) r.push(0);
+    for (var d = 0; d < dados.length; d++) {
+      var c = r[d];
+      if (c !== 0) for (var j = 0; j < g.length; j++) r[d + j] ^= mul(g[j], c);
+    }
+    return r.slice(dados.length);
+  }
+
+  /* ── Tabelas (nível H, versões 1 a 6) ─────────────── */
+  var CAPACIDADE = [7, 14, 24, 34, 44, 58];              // bytes em modo byte
+  var BLOCOS = [                                          // [cw de correção por bloco, [[qtd, cw de dados], …]]
+    [17, [[1, 9]]],
+    [28, [[1, 16]]],
+    [22, [[2, 13]]],
+    [16, [[4, 9]]],
+    [22, [[2, 11], [2, 12]]],
+    [28, [[4, 15]]]
+  ];
+  var ALINHAMENTO = [[], [6, 18], [6, 22], [6, 26], [6, 30], [6, 34]];
+
+  function gerar(texto) {
+    var bytes = Array.prototype.slice.call(new TextEncoder().encode(texto));
+
+    var versao = 0;
+    for (var v = 0; v < CAPACIDADE.length; v++) {
+      if (bytes.length <= CAPACIDADE[v]) { versao = v + 1; break; }
+    }
+    if (!versao) throw new Error('Texto longo demais para as versões suportadas.');
+
+    var tam = 17 + 4 * versao;
+    var info = BLOCOS[versao - 1];
+    var cwCorrecao = info[0];
+    var grupos = info[1];
+    var totalDados = 0;
+    grupos.forEach(function (g) { totalDados += g[0] * g[1]; });
+
+    /* ── Fluxo de bits ── */
+    var bits = [];
+    function push(valor, n) { for (var i = n - 1; i >= 0; i--) bits.push((valor >>> i) & 1); }
+    push(4, 4);                       // modo byte
+    push(bytes.length, 8);            // contador (versões 1–9)
+    bytes.forEach(function (b) { push(b, 8); });
+    var capacidadeBits = totalDados * 8;
+    for (var t = 0; t < 4 && bits.length < capacidadeBits; t++) bits.push(0);
+    while (bits.length % 8 !== 0) bits.push(0);
+
+    var cw = [];
+    for (var i = 0; i < bits.length; i += 8) {
+      var b = 0;
+      for (var k = 0; k < 8; k++) b = (b << 1) | bits[i + k];
+      cw.push(b);
+    }
+    var enchimento = [0xEC, 0x11], e = 0;
+    while (cw.length < totalDados) { cw.push(enchimento[e % 2]); e++; }
+
+    /* ── Blocos e intercalação ── */
+    var blocosDados = [], blocosCorrecao = [], pos = 0;
+    grupos.forEach(function (g) {
+      for (var n = 0; n < g[0]; n++) {
+        var d = cw.slice(pos, pos + g[1]);
+        pos += g[1];
+        blocosDados.push(d);
+        blocosCorrecao.push(correcao(d, cwCorrecao));
+      }
+    });
+
+    var finais = [];
+    var maiorDados = Math.max.apply(null, blocosDados.map(function (b) { return b.length; }));
+    for (var c = 0; c < maiorDados; c++) {
+      for (var bl = 0; bl < blocosDados.length; bl++) {
+        if (c < blocosDados[bl].length) finais.push(blocosDados[bl][c]);
+      }
+    }
+    for (var cc = 0; cc < cwCorrecao; cc++) {
+      for (var bc = 0; bc < blocosCorrecao.length; bc++) finais.push(blocosCorrecao[bc][cc]);
+    }
+
+    /* ── Matriz e padrões fixos ── */
+    var m = [], fixo = [];
+    for (var r = 0; r < tam; r++) {
+      m.push(new Array(tam).fill(0));
+      fixo.push(new Array(tam).fill(false));
+    }
+    function marcar(linha, coluna, escuro) {
+      if (linha < 0 || coluna < 0 || linha >= tam || coluna >= tam) return;
+      m[linha][coluna] = escuro ? 1 : 0;
+      fixo[linha][coluna] = true;
+    }
+
+    function localizador(l0, c0) {
+      for (var dl = -1; dl <= 7; dl++) {
+        for (var dc = -1; dc <= 7; dc++) {
+          var l = l0 + dl, c = c0 + dc;
+          if (l < 0 || c < 0 || l >= tam || c >= tam) continue;
+          var dist = Math.max(Math.abs(dl - 3), Math.abs(dc - 3));
+          marcar(l, c, dist !== 2 && dist <= 3);
+        }
+      }
+    }
+    localizador(0, 0); localizador(0, tam - 7); localizador(tam - 7, 0);
+
+    for (var i2 = 8; i2 < tam - 8; i2++) {
+      marcar(6, i2, i2 % 2 === 0);
+      marcar(i2, 6, i2 % 2 === 0);
+    }
+
+    var centros = ALINHAMENTO[versao - 1];
+    centros.forEach(function (cl) {
+      centros.forEach(function (cc2) {
+        var perto = (cl === 6 && cc2 === 6) || (cl === 6 && cc2 === tam - 7) || (cl === tam - 7 && cc2 === 6);
+        if (perto) return;
+        for (var dl = -2; dl <= 2; dl++) {
+          for (var dc = -2; dc <= 2; dc++) {
+            var dist = Math.max(Math.abs(dl), Math.abs(dc));
+            marcar(cl + dl, cc2 + dc, dist !== 1);
+          }
+        }
+      });
+    });
+
+    /* reserva das áreas de formato */
+    for (var f = 0; f <= 8; f++) { if (!fixo[8][f]) marcar(8, f, false); if (!fixo[f][8]) marcar(f, 8, false); }
+    for (var f2 = 0; f2 < 8; f2++) { if (!fixo[8][tam - 1 - f2]) marcar(8, tam - 1 - f2, false); if (!fixo[tam - 1 - f2][8]) marcar(tam - 1 - f2, 8, false); }
+    marcar(tam - 8, 8, true);
+
+    /* ── Colocação dos dados ── */
+    var idx = 0;
+    for (var dir = tam - 1; dir >= 1; dir -= 2) {
+      if (dir === 6) dir = 5;
+      for (var vert = 0; vert < tam; vert++) {
+        for (var lado = 0; lado < 2; lado++) {
+          var col = dir - lado;
+          var subindo = ((dir + 1) & 2) === 0;
+          var lin = subindo ? tam - 1 - vert : vert;
+          if (fixo[lin][col]) continue;
+          var bit = 0;
+          if (idx < finais.length * 8) bit = (finais[idx >>> 3] >>> (7 - (idx & 7))) & 1;
+          m[lin][col] = bit;
+          idx++;
+        }
+      }
+    }
+
+    /* ── Máscaras ── */
+    function mascara(n, l, c) {
+      switch (n) {
+        case 0: return (l + c) % 2 === 0;
+        case 1: return l % 2 === 0;
+        case 2: return c % 3 === 0;
+        case 3: return (l + c) % 3 === 0;
+        case 4: return (Math.floor(l / 2) + Math.floor(c / 3)) % 2 === 0;
+        case 5: return ((l * c) % 2) + ((l * c) % 3) === 0;
+        case 6: return (((l * c) % 2) + ((l * c) % 3)) % 2 === 0;
+        default: return (((l + c) % 2) + ((l * c) % 3)) % 2 === 0;
+      }
+    }
+
+    function bitsFormato(n) {
+      var dado = (2 << 3) | n;                 // 10 = nível H
+      var resto = dado;
+      for (var i3 = 0; i3 < 10; i3++) resto = (resto << 1) ^ ((resto >>> 9) * 0x537);
+      return ((dado << 10) | resto) ^ 0x5412;
+    }
+
+    function aplicarFormato(mat, n) {
+      var b = bitsFormato(n);
+      function bit(i) { return (b >>> i) & 1; }
+      for (var i4 = 0; i4 <= 5; i4++) mat[i4][8] = bit(i4);
+      mat[7][8] = bit(6);
+      mat[8][8] = bit(7);
+      mat[8][7] = bit(8);
+      for (var i5 = 9; i5 < 15; i5++) mat[8][14 - i5] = bit(i5);
+      for (var i6 = 0; i6 < 8; i6++) mat[8][tam - 1 - i6] = bit(i6);
+      for (var i7 = 8; i7 < 15; i7++) mat[tam - 15 + i7][8] = bit(i7);
+      mat[tam - 8][8] = 1;
+    }
+
+    function penalidade(mat) {
+      var p = 0, escuros = 0, i8, j8;
+
+      function linhaOuColuna(pegar) {
+        for (i8 = 0; i8 < tam; i8++) {
+          var cor = -1, corrida = 0;
+          var historico = [];
+          for (j8 = 0; j8 < tam; j8++) {
+            var v2 = pegar(i8, j8);
+            if (v2 === cor) { corrida++; if (corrida === 5) p += 3; else if (corrida > 5) p += 1; }
+            else { historico.push(corrida); cor = v2; corrida = 1; }
+          }
+          historico.push(corrida);
+        }
+      }
+      linhaOuColuna(function (a, b2) { return mat[a][b2]; });
+      linhaOuColuna(function (a, b2) { return mat[b2][a]; });
+
+      for (i8 = 0; i8 < tam - 1; i8++) {
+        for (j8 = 0; j8 < tam - 1; j8++) {
+          var s = mat[i8][j8] + mat[i8][j8 + 1] + mat[i8 + 1][j8] + mat[i8 + 1][j8 + 1];
+          if (s === 0 || s === 4) p += 3;
+        }
+      }
+
+      var alvo = [1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0];
+      function procurar(pegar) {
+        for (i8 = 0; i8 < tam; i8++) {
+          for (j8 = 0; j8 + 11 <= tam; j8++) {
+            var ok = true, okInv = true;
+            for (var k2 = 0; k2 < 11; k2++) {
+              var v3 = pegar(i8, j8 + k2);
+              if (v3 !== alvo[k2]) ok = false;
+              if (v3 !== alvo[10 - k2]) okInv = false;
+            }
+            if (ok) p += 40;
+            if (okInv) p += 40;
+          }
+        }
+      }
+      procurar(function (a, b2) { return mat[a][b2]; });
+      procurar(function (a, b2) { return mat[b2][a]; });
+
+      for (i8 = 0; i8 < tam; i8++) for (j8 = 0; j8 < tam; j8++) escuros += mat[i8][j8];
+      var pct = (escuros * 100) / (tam * tam);
+      p += Math.floor(Math.abs(pct - 50) / 5) * 10;
+      return p;
+    }
+
+    var melhor = null, melhorNota = Infinity;
+    for (var n2 = 0; n2 < 8; n2++) {
+      var copia = m.map(function (linha) { return linha.slice(); });
+      for (var l2 = 0; l2 < tam; l2++) {
+        for (var c3 = 0; c3 < tam; c3++) {
+          if (!fixo[l2][c3] && mascara(n2, l2, c3)) copia[l2][c3] ^= 1;
+        }
+      }
+      aplicarFormato(copia, n2);
+      var nota = penalidade(copia);
+      if (nota < melhorNota) { melhorNota = nota; melhor = copia; }
+    }
+
+    return { matriz: melhor, tamanho: tam, versao: versao };
+  }
+
+  /* ── Desenho: módulos redondos + símbolo do NAE ───── */
+  function desenhar(qr) {
+    var n = qr.tamanho, m = qr.matriz;
+    var borda = n * 0.275;                        // respiro até a borda do círculo
+    var lado = n + borda * 2;
+    var centro = lado / 2;
+    var raioLogo = n * 0.135;                     // buraco central para o símbolo
+    var escuro = '#0B3251';
+
+    function ehLocalizador(l, c) {
+      return (l < 7 && c < 7) || (l < 7 && c >= n - 7) || (l >= n - 7 && c < 7);
+    }
+
+    var pecas = [];
+    pecas.push('<circle cx="' + centro + '" cy="' + centro + '" r="' + (lado / 2 - 0.4) + '" fill="#FFFFFF"/>');
+    pecas.push('<circle cx="' + centro + '" cy="' + centro + '" r="' + (lado / 2 - 0.9) + '" fill="none" stroke="' + escuro + '" stroke-width="0.85"/>');
+    pecas.push('<circle cx="' + centro + '" cy="' + centro + '" r="' + (lado / 2 - 2.2) + '" fill="none" stroke="#F2C14E" stroke-width="0.5"/>');
+
+    for (var l = 0; l < n; l++) {
+      for (var c = 0; c < n; c++) {
+        if (!m[l][c] || ehLocalizador(l, c)) continue;
+        var cx = borda + c + 0.5, cy = borda + l + 0.5;
+        var dx = cx - centro, dy = cy - centro;
+        if (Math.sqrt(dx * dx + dy * dy) < raioLogo + 0.9) continue;
+        /* módulo arredondado ocupando a célula inteira: fica redondo e continua
+           legível, porque as linhas de tempo e os cantos não se fragmentam */
+        pecas.push('<rect x="' + (borda + c) + '" y="' + (borda + l) + '" width="1" height="1" rx="0.4" fill="' + escuro + '"/>');
+      }
+    }
+
+    [[0, 0], [0, n - 7], [n - 7, 0]].forEach(function (p) {
+      var x = borda + p[1], y = borda + p[0];
+      pecas.push('<rect x="' + (x + 0.5) + '" y="' + (y + 0.5) + '" width="6" height="6" rx="2.1" fill="none" stroke="' + escuro + '" stroke-width="1"/>');
+      pecas.push('<rect x="' + (x + 2) + '" y="' + (y + 2) + '" width="3" height="3" rx="1.05" fill="' + escuro + '"/>');
+    });
+
+    /* símbolo do NAE ao centro */
+    var esc = (raioLogo * 2) / 64 * 1.55;
+    pecas.push('<circle cx="' + centro + '" cy="' + centro + '" r="' + (raioLogo + 0.55) + '" fill="#FFFFFF"/>');
+    pecas.push('<circle cx="' + centro + '" cy="' + centro + '" r="' + raioLogo + '" fill="' + escuro + '"/>');
+    pecas.push(
+      '<g transform="translate(' + (centro - 32 * esc) + ',' + (centro - 32 * esc) + ') scale(' + esc + ')">' +
+        '<circle cx="32" cy="17.5" r="3.9" fill="#F2C14E"/>' +
+        '<path d="M13 29C19 24.6 26 25.6 30.6 29.4v18.2C26 43.9 19 43.2 13 46.9z" fill="#FFFFFF"/>' +
+        '<path d="M51 29c-6-4.4-13-3.4-17.6.4v18.2C38 43.9 45 43.2 51 46.9z" fill="#F2C14E"/>' +
+      '</g>'
+    );
+
+    return '<svg width="1400" height="1400" viewBox="0 0 ' + lado.toFixed(2) + ' ' + lado.toFixed(2) + '" ' +
+           'xmlns="http://www.w3.org/2000/svg" ' +
+           'role="img" aria-label="QR code do site do NAE Guanhães">' + pecas.join('') + '</svg>';
+  }
+
+  var qr = gerar(URL_SITE);
+  var svg = desenhar(qr);
+  document.querySelectorAll('[data-qr]').forEach(function (alvo) { alvo.innerHTML = svg; });
+
+  window.NAE_QR = { url: URL_SITE, versao: qr.versao, tamanho: qr.tamanho, svg: svg, matriz: qr.matriz };
+})();
+</script>
+
+</body>
+</html>
