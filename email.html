@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-mail institucional — NAE Guanhães | UEMG</title>
+<meta name="description" content="Passo a passo ilustrado para o primeiro acesso e a redefinição de senha do e-mail institucional da UEMG.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html">
+      <svg width="48" height="48" viewBox="0 0 64 64" role="img" aria-label="Logo do NAE Guanhães">
+        <circle cx="32" cy="32" r="30.5" fill="#FFFFFF" opacity=".13"></circle>
+        <circle cx="32" cy="32" r="30.5" fill="none" stroke="#FFFFFF" stroke-width="1.4" opacity=".5"></circle>
+        <circle cx="32" cy="17.5" r="3.9" fill="#F2C14E"></circle>
+        <path d="M13 29C19 24.6 26 25.6 30.6 29.4v18.2C26 43.9 19 43.2 13 46.9z" fill="#FFFFFF" opacity=".95"></path>
+        <path d="M51 29c-6-4.4-13-3.4-17.6.4v18.2C38 43.9 45 43.2 51 46.9z" fill="#F2C14E"></path>
+      </svg>
+      <span>
+        <span class="brand-name" style="display:block">NAE</span>
+        <span class="brand-sub" style="display:block">Núcleo de Apoio Estudantil · Guanhães</span>
+      </span>
+    </a>
+    <div class="unidade">
+      <b>UEMG — Unidade Guanhães</b><br>
+      Coordenação: Jonatan Barbosa Silva
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Seções do site">
+  <div class="wrap nav-in">
+    <a class="nav-link" href="index.html" style="--c: var(--navy)"><i class="dot"></i>Início</a>
+    <a class="nav-link" href="email.html" aria-current="page" style="--c: var(--blue)"><i class="dot"></i>E-mail Institucional</a>
+    <a class="nav-link" href="horarios.html" style="--c: var(--cyan)"><i class="dot"></i>Horários de Aulas</a>
+    <a class="nav-link" href="mapa.html" style="--c: var(--green)"><i class="dot"></i>Mapa do Campus</a>
+    <a class="nav-link" href="sobre.html" style="--c: var(--amber)"><i class="dot"></i>Sobre o NAE</a>
+    <a class="nav-link" href="contato.html" style="--c: var(--orange)"><i class="dot"></i>Fale com o NAE</a>
+  </div>
+</nav>
+
+<main class="wrap stack" id="conteudo">
+
+  <div class="col stack-s">
+    <div class="titulo-sec" style="--c: var(--blue)">
+      <span class="eyebrow" style="--c: var(--blue)">Guia ilustrado · 10 etapas</span>
+      <h1>Ajuda com o e-mail institucional</h1>
+    </div>
+    <p class="lede">
+      Todo estudante da UEMG tem um e-mail institucional. É por ele que você entra no
+      Microsoft 365 (Teams, Word, Excel, OneDrive) e recebe os comunicados oficiais da
+      Universidade. Abaixo, o passo a passo do <b>primeiro acesso</b> e da
+      <b>redefinição de senha</b>, tela por tela.
+    </p>
+  </div>
+
+  <div class="stack-m">
+    <div class="card reveal" id="meu-endereco" style="--c: var(--cyan)">
+      <span class="rotulo">Descubra seu endereço</span>
+      <h3>Qual é o seu e-mail?</h3>
+      <p>O endereço do discente segue sempre o padrão <b>prenome.matrícula@discente.uemg.br</b>. Preencha os dois campos para montar o seu:</p>
+      <div class="builder">
+        <div class="field">
+          <label for="in-nome">Seu prenome (primeiro nome)</label>
+          <input id="in-nome" type="text" autocomplete="off" placeholder="cicrano" spellcheck="false">
+        </div>
+        <div class="field">
+          <label for="in-mat">Sua matrícula</label>
+          <input id="in-mat" type="text" inputmode="numeric" autocomplete="off" placeholder="0000000" spellcheck="false">
+        </div>
+      </div>
+      <div class="result">
+        <span class="out" id="out-email">cicrano.0000000@discente.uemg.br</span>
+        <button class="btn ghost" id="btn-copiar" type="button" style="--c: var(--cyan)">Copiar</button>
+        <span class="copied" id="copiado" hidden>Copiado</span>
+      </div>
+      <div class="note">
+        <p><b>Atenção</b> Servidores e professores usam outro formato: <span class="addr">nome.sobrenome@uemg.br</span>. Se você é discente, use sempre o <span class="addr">@discente.uemg.br</span>.</p>
+      </div>
+    </div>
+
+    <div class="card reveal" style="--c: var(--green)">
+      <span class="rotulo">Preparação</span>
+      <h3>Antes de começar, tenha em mãos</h3>
+      <ul class="limpa" style="--c: var(--green)">
+        <li>Seu <b>CPF</b>.</li>
+        <li>Sua <b>matrícula</b> (está nos documentos de matrícula e no sistema acadêmico).</li>
+        <li>Acesso ao seu <b>e-mail pessoal</b> — é para lá que o link de redefinição será enviado.</li>
+      </ul>
+      <div class="note alerta">
+        <p><b>Importante</b> O e-mail pessoal precisa estar atualizado no sistema acadêmico (Lyceum). Quem faz essa atualização é a <b>secretaria acadêmica da sua unidade</b>. Se você trocou de e-mail e não avisou, o token não chega.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stack-m" id="passo-a-passo">
+    <div class="titulo-sec col" style="--c: var(--blue)">
+      <span class="eyebrow" style="--c: var(--blue)">Do login à nova senha</span>
+      <h2>Passo a passo com as telas</h2>
+    </div>
+
+    <div class="steps">
+
+      <div class="step reveal">
+        <div class="step-num" aria-hidden="true">1</div>
+        <div class="step-body">
+          <div class="step-title">Abra a página de login do Microsoft 365</div>
+          <p>Acesse <a href="https://login.microsoftonline.com" target="_blank" rel="noopener noreferrer">login.microsoftonline.com</a>. Prefira um navegador de computador; se estiver no celular, use uma aba anônima para não misturar com outra conta já logada.</p>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num" aria-hidden="true">2</div>
+        <div class="step-body">
+          <div class="step-title">Digite o e-mail institucional e clique em “Avançar”</div>
+          <p>Escreva o endereço completo, no padrão <span class="addr">prenome.matricula@discente.uemg.br</span>.</p>
+          <figure class="shot">
+            <div class="janela">
+              <div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="janela-url">login.microsoftonline.com</span></div>
+              <div class="janela-tela">
+                <div class="ms">
+                  <div class="ms-logo">Universidade do Estado<br>de Minas Gerais · UEMG</div>
+                  <div class="ms-title">Entrar</div>
+                  <div class="ms-input">cicrano.0000000@discente.uemg.br</div>
+                  <div class="ms-sub">Não tem uma conta? <span class="ms-link">Crie uma!</span></div>
+                  <div class="ms-link">Não consegue acessar sua conta?</div>
+                  <div class="ms-row linha-alvo">
+                    <span class="aponta">clique aqui</span>
+                    <span class="ms-btn alvo">Avançar</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Tela 1 — página de login do Microsoft 365.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num" aria-hidden="true">3</div>
+        <div class="step-body">
+          <div class="step-title">Na tela da senha, clique em “Esqueci minha senha”</div>
+          <p>A plataforma confere se existe uma conta para o endereço informado. Na tela seguinte, <b>não digite nada no campo de senha</b> — clique direto no link abaixo dele.</p>
+          <figure class="shot">
+            <div class="janela">
+              <div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="janela-url">login.microsoftonline.com</span></div>
+              <div class="janela-tela">
+                <div class="ms">
+                  <div class="ms-logo">Universidade do Estado<br>de Minas Gerais · UEMG</div>
+                  <div class="ms-back">← cicrano.0000000@discente.uemg.br</div>
+                  <div class="ms-title">Insira a senha</div>
+                  <div class="ms-input vazio">Senha</div>
+                  <div class="linha-alvo">
+                    <span class="ms-link alvo">Esqueci minha senha</span>
+                    <span class="aponta">clique aqui</span>
+                  </div>
+                  <div class="ms-row"><span class="ms-btn">Entrar</span></div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Tela 2 — tela de senha, com o link de recuperação em destaque.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num" aria-hidden="true">4</div>
+        <div class="step-body">
+          <div class="step-title">Confirme que você não é um robô</div>
+          <p>Na página <b>“Quem é você?”</b>, repita o seu e-mail institucional e copie os caracteres da imagem (ou use o áudio). Depois, clique em <b>“Avançar”</b>.</p>
+          <figure class="shot">
+            <div class="janela">
+              <div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="janela-url">passwordreset.microsoftonline.com</span></div>
+              <div class="janela-tela">
+                <div class="ms wide">
+                  <div class="ms-title">Quem é você?</div>
+                  <div class="ms-aviso">Para recuperar sua conta, comece inserindo seu e-mail ou nome de usuário e os caracteres da imagem ou do áudio abaixo.</div>
+                  <div class="ms-label">E-mail ou Nome de Usuário: *</div>
+                  <div class="linha-alvo">
+                    <span class="ms-input box alvo" style="flex:1 1 12rem">cicrano.0000000@discente.uemg.br</span>
+                    <span class="aponta">seu e-mail</span>
+                  </div>
+                  <div class="ms-captcha" aria-hidden="true">5AVD LXW</div>
+                  <div class="linha-alvo">
+                    <span class="ms-input box vazio alvo" style="flex:1 1 9rem">&nbsp;</span>
+                    <span class="aponta">os caracteres</span>
+                  </div>
+                  <div class="ms-aviso">Insira os caracteres da imagem ou as palavras do áudio. *</div>
+                  <div class="linha-alvo">
+                    <span class="ms-btn alvo">Avançar</span>
+                    <span class="ms-btn claro">Cancelar</span>
+                    <span class="aponta">clique aqui</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Tela 3 — verificação de segurança (captcha).</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num" aria-hidden="true">5</div>
+        <div class="step-body">
+          <div class="step-title">Aparece “Lamentamos”? É o caminho certo — clique no link</div>
+          <p>A Microsoft exibe uma mensagem informando que a senha não pode ser redefinida por ali. Dentro do texto há o link <b>“entrar em contato com o seu administrador”</b>. Clique nele: você será levado à página de identificação da UEMG.</p>
+          <figure class="shot">
+            <div class="janela">
+              <div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="janela-url">passwordreset.microsoftonline.com</span></div>
+              <div class="janela-tela">
+                <div class="ms wide">
+                  <div class="ms-logo">Universidade do Estado<br>de Minas Gerais · UEMG</div>
+                  <div class="ms-title" style="font-size:1.02rem;font-weight:400">Voltar para sua conta</div>
+                  <div class="ms-sub">Lamentamos</div>
+                  <div class="ms-aviso">Você não pode redefinir sua própria senha porque o write-back de senha não está ativado para a sua organização.</div>
+                  <div class="ms-aviso linha-alvo">
+                    Você precisa <span class="ms-link alvo">entrar em contato com o seu administrador</span>
+                    <span class="aponta">clique aqui</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Tela 4 — mensagem que leva ao portal de recuperação da UEMG.</figcaption>
+          </figure>
+          <div class="note info">
+            <p><b>Não se assuste</b> Essa tela parece um erro, mas não é. Ela é justamente a ponte para o portal de redefinição da Universidade.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num" aria-hidden="true">6</div>
+        <div class="step-body">
+          <div class="step-title">Informe CPF e e-mail institucional e clique em “Recuperar”</div>
+          <p>No portal da UEMG, preencha os dois campos com os seus dados e confirme.</p>
+          <figure class="shot">
+            <div class="janela">
+              <div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="janela-url">uemg.br · portal de recuperação</span></div>
+              <div class="janela-tela">
+                <div class="ms recuperar">
+                  <div class="ms-aviso">Informe seu e-mail institucional para recuperação. Ele tem o formato <b>nome.sobrenome@uemg.br</b> ou <b>nome.matricula@discente.uemg.br</b>.</div>
+                  <div class="ms-label">CPF</div>
+                  <div class="linha-alvo">
+                    <span class="ms-input box alvo" style="flex:1 1 9rem">123.456.789-00</span>
+                    <span class="aponta">seu CPF</span>
+                  </div>
+                  <div class="ms-label">E-mail</div>
+                  <div class="linha-alvo">
+                    <span class="ms-input box alvo" style="flex:1 1 12rem">cicrano.0000000@discente.uemg.br</span>
+                    <span class="aponta">seu e-mail</span>
+                  </div>
+                  <div class="ms-row linha-alvo">
+                    <span class="aponta">clique aqui</span>
+                    <span class="ms-btn escuro alvo">RECUPERAR</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Tela 5 — portal de recuperação da UEMG.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num" aria-hidden="true">7</div>
+        <div class="step-body">
+          <div class="step-title">O sistema confere seus dados no Lyceum</div>
+          <p>O portal compara CPF e e-mail com o cadastro do sistema acadêmico. Se estiver tudo certo, ele envia um <b>token de redefinição</b> para o <b>e-mail pessoal</b> registrado na sua matrícula.</p>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num" aria-hidden="true">8</div>
+        <div class="step-body">
+          <div class="step-title">Abra o seu e-mail pessoal e procure a mensagem</div>
+          <p>A mensagem vem de um endereço do domínio <span class="addr">uemg.br</span> e traz as orientações de uso do token.</p>
+          <ul class="limpa">
+            <li>Confira a <b>caixa de entrada</b>.</li>
+            <li>Se não achar, confira o <b>spam / lixo eletrônico</b> e a aba “Promoções”.</li>
+            <li>Aguarde alguns minutos antes de repetir o processo — pedidos repetidos geram tokens novos e invalidam o anterior.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num" aria-hidden="true">9</div>
+        <div class="step-body">
+          <div class="step-title">Crie a nova senha e clique em “Alterar”</div>
+          <p>Clique no botão de redefinição do e-mail (ou abra o link com o token). Digite a nova senha, repita no campo seguinte e confirme.</p>
+          <figure class="shot">
+            <div class="janela">
+              <div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="janela-url">uemg.br · nova senha</span></div>
+              <div class="janela-tela">
+                <div class="ms recuperar">
+                  <div class="ms-label">E-mail</div>
+                  <div class="ms-input box">cicrano.0000000@discente.uemg.br</div>
+                  <div class="ms-label">Nova Senha</div>
+                  <div class="ms-input box vazio">&nbsp;</div>
+                  <div class="ms-label">Repita a Nova Senha</div>
+                  <div class="ms-input box vazio">&nbsp;</div>
+                  <div class="ms-row linha-alvo">
+                    <span class="aponta">clique aqui</span>
+                    <span class="ms-btn escuro alvo">ALTERAR</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Tela 6 — definição da nova senha.</figcaption>
+          </figure>
+          <div class="note">
+            <p><b>Dicas para a senha</b> Use pelo menos 8 caracteres, misturando letras maiúsculas, minúsculas, números e símbolos. Evite CPF, matrícula, data de nascimento e nome próprio.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num" aria-hidden="true">10</div>
+        <div class="step-body">
+          <div class="step-title">Espere de 3 a 5 minutos e entre</div>
+          <p>A senha já foi alterada, mas leva alguns minutos até ser sincronizada com o Microsoft 365. Depois desse intervalo, volte ao login e acesse normalmente o Teams, o Outlook e os demais serviços.</p>
+          <div class="note ok">
+            <p><b>Pronto</b> Se a nova senha ainda não funcionar após 5 minutos, feche o navegador, abra uma janela anônima e tente de novo antes de repetir todo o processo.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="note alerta col">
+    <p><b>Segurança</b> Nem o NAE, nem a secretaria, nem a UEMG pedem a sua senha por WhatsApp, telefone ou e-mail. Nunca compartilhe sua senha com ninguém.</p>
+  </div>
+
+  <div class="stack-m">
+    <div class="titulo-sec col" style="--c: var(--cyan)">
+      <span class="eyebrow" style="--c: var(--cyan)">Dúvidas comuns</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div>
+      <details class="faq">
+        <summary>Não sei qual é a minha matrícula. Onde encontro?</summary>
+        <p>Ela consta nos seus documentos de matrícula e no sistema acadêmico. Em caso de dúvida, procure a secretaria acadêmica da unidade ou o NAE.</p>
+      </details>
+      <details class="faq">
+        <summary>O token não chegou no meu e-mail pessoal.</summary>
+        <p>Confira o spam. Se mesmo assim não aparecer, é bem provável que o e-mail pessoal cadastrado no sistema acadêmico esteja desatualizado ou incorreto — só a secretaria acadêmica da sua unidade pode corrigir esse cadastro.</p>
+      </details>
+      <details class="faq">
+        <summary>O portal diz que meus dados estão inconsistentes.</summary>
+        <p>Significa que o CPF e o e-mail informados não batem com o cadastro do Lyceum. Confira se digitou o endereço institucional completo e no formato correto. Persistindo, leve um documento com foto à secretaria acadêmica para conferência dos dados.</p>
+      </details>
+      <details class="faq">
+        <summary>Alterei a senha, mas o login continua recusando.</summary>
+        <p>Aguarde de 3 a 5 minutos para a sincronização. Depois, tente em uma janela anônima, confira se o Caps Lock está desligado e se não há espaço sobrando no início ou no fim do endereço.</p>
+      </details>
+      <details class="faq">
+        <summary>Para que serve o e-mail institucional?</summary>
+        <p>É a sua identidade digital na Universidade: dá acesso ao pacote Microsoft 365 (Teams, Word, Excel, PowerPoint e OneDrive), a plataformas acadêmicas e aos comunicados oficiais da UEMG e do NAE.</p>
+      </details>
+      <details class="faq">
+        <summary>Posso acessar pelo celular?</summary>
+        <p>Pode. Use o aplicativo Outlook ou o navegador. Para a redefinição de senha, porém, o computador costuma facilitar — a tela do captcha e os links são menores no celular.</p>
+      </details>
+    </div>
+  </div>
+
+  <div class="card col reveal" style="--c: var(--orange)">
+    <span class="rotulo">Suporte</span>
+    <h3>Ainda travado?</h3>
+    <p>Se você seguiu todas as etapas e o acesso continua bloqueado, procure o NAE — no <b>Prédio do Administrativo</b>, às terças e quintas das 18h às 19h, ou por <a href="mailto:nae.guanhaes@uemg.br">nae.guanhaes@uemg.br</a>.</p>
+    <div><a class="btn" href="contato.html" style="--c: var(--orange)">Falar com o NAE →</a></div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <p>NAE — Núcleo de Apoio Estudantil · UEMG Unidade Guanhães<br>Coordenação: Jonatan Barbosa Silva</p>
+    <div class="foot-links">
+      <a href="index.html">Início</a>
+      <a href="horarios.html">Horários</a>
+      <a href="mapa.html">Mapa</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <p class="assinatura">Desenvolvido por <b>Jonatan Barbosa Silva</b></p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

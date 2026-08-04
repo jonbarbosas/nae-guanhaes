@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Horários de aulas 2026.2 — NAE Guanhães | UEMG</title>
+<meta name="description" content="Grade de horários 2026.2 dos cursos de Direito e Engenharia Civil da UEMG — Unidade Guanhães.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html">
+      <svg width="48" height="48" viewBox="0 0 64 64" role="img" aria-label="Logo do NAE Guanhães">
+        <circle cx="32" cy="32" r="30.5" fill="#FFFFFF" opacity=".13"></circle>
+        <circle cx="32" cy="32" r="30.5" fill="none" stroke="#FFFFFF" stroke-width="1.4" opacity=".5"></circle>
+        <circle cx="32" cy="17.5" r="3.9" fill="#F2C14E"></circle>
+        <path d="M13 29C19 24.6 26 25.6 30.6 29.4v18.2C26 43.9 19 43.2 13 46.9z" fill="#FFFFFF" opacity=".95"></path>
+        <path d="M51 29c-6-4.4-13-3.4-17.6.4v18.2C38 43.9 45 43.2 51 46.9z" fill="#F2C14E"></path>
+      </svg>
+      <span>
+        <span class="brand-name" style="display:block">NAE</span>
+        <span class="brand-sub" style="display:block">Núcleo de Apoio Estudantil · Guanhães</span>
+      </span>
+    </a>
+    <div class="unidade">
+      <b>UEMG — Unidade Guanhães</b><br>
+      Coordenação: Jonatan Barbosa Silva
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Seções do site">
+  <div class="wrap nav-in">
+    <a class="nav-link" href="index.html" style="--c: var(--navy)"><i class="dot"></i>Início</a>
+    <a class="nav-link" href="email.html" style="--c: var(--blue)"><i class="dot"></i>E-mail Institucional</a>
+    <a class="nav-link" href="horarios.html" aria-current="page" style="--c: var(--cyan)"><i class="dot"></i>Horários de Aulas</a>
+    <a class="nav-link" href="mapa.html" style="--c: var(--green)"><i class="dot"></i>Mapa do Campus</a>
+    <a class="nav-link" href="sobre.html" style="--c: var(--amber)"><i class="dot"></i>Sobre o NAE</a>
+    <a class="nav-link" href="contato.html" style="--c: var(--orange)"><i class="dot"></i>Fale com o NAE</a>
+  </div>
+</nav>
+
+<main class="wrap stack-m" id="conteudo">
+
+  <div class="col stack-s">
+    <div class="titulo-sec" style="--c: var(--cyan)">
+      <span class="eyebrow" style="--c: var(--cyan)">Semestre 2026.2</span>
+      <h1>Horários de aulas</h1>
+    </div>
+    <p class="lede">
+      Grade completa dos cursos de <b>Direito</b> e <b>Engenharia Civil</b> da Unidade Guanhães,
+      com a sala de cada turma. Filtre pelo curso ou busque por disciplina, professor, período ou sala.
+    </p>
+  </div>
+
+  <div class="filtros">
+    <div class="chips" role="group" aria-label="Filtrar por curso">
+      <button class="chip" type="button" data-curso="todos" aria-pressed="true" style="--c: var(--navy)">Todos</button>
+      <button class="chip" type="button" data-curso="Direito" aria-pressed="false" style="--c: var(--blue)">Direito</button>
+      <button class="chip" type="button" data-curso="Engenharia Civil" aria-pressed="false" style="--c: var(--green)">Engenharia Civil</button>
+    </div>
+    <div class="busca">
+      <label for="in-busca" style="position:absolute;left:-9999px">Buscar</label>
+      <input id="in-busca" type="search" placeholder="Buscar disciplina, professor, período ou sala…" autocomplete="off">
+    </div>
+    <span class="contagem" id="contagem"></span>
+  </div>
+
+  <div class="note info col">
+    <p><b>Legenda</b> <span class="tag hib">Híbrida</span> parte presencial, parte a distância · <span class="tag ead">EaD</span> totalmente a distância · <span class="tag est">Estágio</span> prática real ou simulada · <span class="tag opt">Optativa</span> disciplina eletiva.</p>
+  </div>
+
+  <div id="lista-turmas"></div>
+
+  <p class="dica-mapa">Fonte: quadro oficial de horários da Unidade Guanhães — 2026.2. Alterações pontuais são divulgadas pela coordenação de curso.</p>
+
+  <div class="card col reveal" style="--c: var(--green)">
+    <span class="rotulo">Não achou sua sala?</span>
+    <h3>Veja onde ela fica</h3>
+    <p>O mapa do campus mostra a planta da unidade com todas as salas, laboratórios e serviços.</p>
+    <div><a class="btn ghost" href="mapa.html" style="--c: var(--green)">Abrir o mapa do campus →</a></div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <p>NAE — Núcleo de Apoio Estudantil · UEMG Unidade Guanhães<br>Coordenação: Jonatan Barbosa Silva</p>
+    <div class="foot-links">
+      <a href="index.html">Início</a>
+      <a href="email.html">E-mail institucional</a>
+      <a href="mapa.html">Mapa</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <p class="assinatura">Desenvolvido por <b>Jonatan Barbosa Silva</b></p>
+  </div>
+</footer>
+
+<script src="assets/horarios.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

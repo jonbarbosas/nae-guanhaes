@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa do campus — NAE Guanhães | UEMG</title>
+<meta name="description" content="Planta ilustrada da UEMG — Unidade Guanhães: salas de aula, laboratórios, biblioteca, auditório, prédio administrativo e sala do NAE.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html">
+      <svg width="48" height="48" viewBox="0 0 64 64" role="img" aria-label="Logo do NAE Guanhães">
+        <circle cx="32" cy="32" r="30.5" fill="#FFFFFF" opacity=".13"></circle>
+        <circle cx="32" cy="32" r="30.5" fill="none" stroke="#FFFFFF" stroke-width="1.4" opacity=".5"></circle>
+        <circle cx="32" cy="17.5" r="3.9" fill="#F2C14E"></circle>
+        <path d="M13 29C19 24.6 26 25.6 30.6 29.4v18.2C26 43.9 19 43.2 13 46.9z" fill="#FFFFFF" opacity=".95"></path>
+        <path d="M51 29c-6-4.4-13-3.4-17.6.4v18.2C38 43.9 45 43.2 51 46.9z" fill="#F2C14E"></path>
+      </svg>
+      <span>
+        <span class="brand-name" style="display:block">NAE</span>
+        <span class="brand-sub" style="display:block">Núcleo de Apoio Estudantil · Guanhães</span>
+      </span>
+    </a>
+    <div class="unidade">
+      <b>UEMG — Unidade Guanhães</b><br>
+      Coordenação: Jonatan Barbosa Silva
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Seções do site">
+  <div class="wrap nav-in">
+    <a class="nav-link" href="index.html" style="--c: var(--navy)"><i class="dot"></i>Início</a>
+    <a class="nav-link" href="email.html" style="--c: var(--blue)"><i class="dot"></i>E-mail Institucional</a>
+    <a class="nav-link" href="horarios.html" style="--c: var(--cyan)"><i class="dot"></i>Horários de Aulas</a>
+    <a class="nav-link" href="mapa.html" aria-current="page" style="--c: var(--green)"><i class="dot"></i>Mapa do Campus</a>
+    <a class="nav-link" href="sobre.html" style="--c: var(--amber)"><i class="dot"></i>Sobre o NAE</a>
+    <a class="nav-link" href="contato.html" style="--c: var(--orange)"><i class="dot"></i>Fale com o NAE</a>
+  </div>
+</nav>
+
+<main class="wrap stack-m" id="conteudo">
+
+  <div class="col stack-s">
+    <div class="titulo-sec" style="--c: var(--green)">
+      <span class="eyebrow" style="--c: var(--green)">Mapa de salas 2026.2</span>
+      <h1>Mapa do campus</h1>
+    </div>
+    <p class="lede">
+      A planta da Unidade Guanhães com todas as salas, laboratórios e serviços.
+      Clique em uma sala de aula para ver o horário da turma; clique no prédio do
+      administrativo para chegar ao NAE.
+    </p>
+  </div>
+
+  <div class="legenda">
+    <span style="--c: var(--blue)"><i></i> Turmas de Direito</span>
+    <span style="--c: var(--green)"><i></i> Turmas de Engenharia Civil</span>
+    <span style="--c: var(--cyan)"><i></i> Laboratórios, biblioteca e auditório</span>
+    <span style="--c: var(--amber)"><i></i> Serviços e convivência</span>
+    <span style="--c: var(--orange)"><i></i> Administrativo e NAE</span>
+  </div>
+
+  <div class="planta-caixa">
+    <svg class="planta" viewBox="0 0 1240 790" role="img" aria-labelledby="planta-t planta-d">
+      <title id="planta-t">Planta da Unidade Guanhães da UEMG</title>
+      <desc id="planta-d">Ala norte com banheiros, biblioteca e salas 1 a 7; pátio central; ala sul com cantina, laboratórios, auditório e salas 8, 9 e 10; sala 11 ao norte; prédio do administrativo com a sala do NAE e prédio anexo do NPJ ao sul.</desc>
+
+      <defs>
+        <pattern id="grama" width="26" height="26" patternUnits="userSpaceOnUse">
+          <path d="M0 26 L26 0" stroke="var(--aqua)" stroke-width="1" opacity=".25"></path>
+        </pattern>
+      </defs>
+
+      <rect x="18" y="18" width="1204" height="754" rx="18" fill="var(--surface-2)" stroke="var(--hair)"></rect>
+
+      <!-- pátio -->
+      <rect x="40" y="300" width="1160" height="132" rx="10" fill="color-mix(in srgb, var(--aqua) 12%, var(--surface))" stroke="color-mix(in srgb, var(--aqua) 45%, var(--surface))" stroke-dasharray="6 5"></rect>
+      <rect x="40" y="300" width="1160" height="132" rx="10" fill="url(#grama)"></rect>
+      <text class="rm-patio" x="330" y="378" text-anchor="middle">Pátio</text>
+
+      <g opacity=".85">
+        <g transform="translate(120,352)">
+          <rect x="-2.5" y="14" width="5" height="16" rx="2" fill="var(--amber)" opacity=".8"></rect>
+          <circle cx="0" cy="6" r="17" fill="var(--green)" opacity=".55"></circle>
+          <circle cx="-8" cy="12" r="11" fill="var(--green)" opacity=".45"></circle>
+          <circle cx="9" cy="12" r="10" fill="var(--green)" opacity=".45"></circle>
+        </g>
+        <g transform="translate(510,352)">
+          <rect x="-2.5" y="14" width="5" height="16" rx="2" fill="var(--amber)" opacity=".8"></rect>
+          <circle cx="0" cy="6" r="17" fill="var(--green)" opacity=".55"></circle>
+          <circle cx="-8" cy="12" r="11" fill="var(--green)" opacity=".45"></circle>
+          <circle cx="9" cy="12" r="10" fill="var(--green)" opacity=".45"></circle>
+        </g>
+        <g transform="translate(650,364)" stroke="var(--muted)" stroke-width="3" stroke-linecap="round" opacity=".65">
+          <path d="M-26 0 h52"></path><path d="M-26 -9 h52"></path>
+          <path d="M-20 0 v12"></path><path d="M20 0 v12"></path>
+        </g>
+        <g transform="translate(430,368)" stroke="var(--muted)" stroke-width="3" stroke-linecap="round" opacity=".65">
+          <path d="M-24 0 h48"></path><path d="M-24 -9 h48"></path>
+          <path d="M-18 0 v11"></path><path d="M18 0 v11"></path>
+        </g>
+      </g>
+
+      <!-- ══ ALA NORTE ══ -->
+      <a class="sala" href="horarios.html?sala=11" style="--c: var(--green)" aria-label="Sala 11, 3º período de Engenharia Civil — ver horário">
+        <rect class="corpo" x="40" y="40" width="200" height="110" rx="8" fill="color-mix(in srgb, var(--green) 13%, var(--surface))" stroke="color-mix(in srgb, var(--green) 55%, var(--surface))" stroke-width="2"></rect>
+        <g transform="translate(62,68)" stroke="var(--green)" stroke-width="2" fill="none" stroke-linecap="round">
+          <rect x="0" y="0" width="22" height="15" rx="2"></rect><path d="M5 19h12"></path><path d="M11 15v4"></path>
+        </g>
+        <text class="rm-nome" x="98" y="82">Sala nº 11</text>
+        <text class="rm-ocup" x="62" y="112">3º período</text>
+        <text class="rm-ocup" x="62" y="130">Engenharia Civil</text>
+        <g class="lupa" transform="translate(214,60)"><circle r="9" fill="var(--green)"></circle><text x="0" y="4" text-anchor="middle" font-size="11" fill="#fff">→</text></g>
+      </a>
+
+      <g style="--c: var(--amber)">
+        <rect x="40" y="150" width="200" height="150" rx="8" fill="color-mix(in srgb, var(--amber) 12%, var(--surface))" stroke="color-mix(in srgb, var(--amber) 50%, var(--surface))" stroke-width="2"></rect>
+        <g transform="translate(62,186)" fill="var(--amber)" opacity=".9">
+          <circle cx="7" cy="5" r="5"></circle><path d="M2 13h10l3 14h-4l-1 12h-6l-1-12h-4z"></path>
+          <circle cx="30" cy="5" r="5"></circle><path d="M30 13c6 0 8 4 9 14h-4l-1 12h-8l-1-12h-4c1-10 3-14 9-14z"></path>
+        </g>
+        <text class="rm-nome" x="62" y="256">Banheiros</text>
+      </g>
+
+      <g style="--c: var(--cyan)">
+        <rect x="240" y="150" width="200" height="150" rx="8" fill="color-mix(in srgb, var(--cyan) 12%, var(--surface))" stroke="color-mix(in srgb, var(--cyan) 50%, var(--surface))" stroke-width="2"></rect>
+        <g transform="translate(262,182)" fill="none" stroke="var(--cyan)" stroke-width="2.2" stroke-linejoin="round">
+          <path d="M0 4c8-4 16-4 22 0v26c-6-4-14-4-22 0z"></path>
+          <path d="M44 4c-8-4-16-4-22 0v26c6-4 14-4 22 0z"></path>
+        </g>
+        <text class="rm-nome" x="262" y="256">Biblioteca</text>
+      </g>
+
+      <a class="sala" href="horarios.html?sala=1" style="--c: var(--green)" aria-label="Sala 1, turmas extras de Engenharia Civil — ver horário">
+        <rect class="corpo" x="440" y="150" width="105" height="150" rx="8" fill="color-mix(in srgb, var(--green) 13%, var(--surface))" stroke="color-mix(in srgb, var(--green) 55%, var(--surface))" stroke-width="2"></rect>
+        <text class="rm-min" x="492" y="196" text-anchor="middle">Sala nº 1</text>
+        <text class="rm-ocup" x="492" y="228" text-anchor="middle">Turmas extras</text>
+        <text class="rm-ocup" x="492" y="246" text-anchor="middle">Eng. Civil</text>
+        <g class="lupa" transform="translate(528,168)"><circle r="9" fill="var(--green)"></circle><text x="0" y="4" text-anchor="middle" font-size="11" fill="#fff">→</text></g>
+      </a>
+      <a class="sala" href="horarios.html?sala=2" style="--c: var(--green)" aria-label="Sala 2, 7º período de Engenharia Civil — ver horário">
+        <rect class="corpo" x="545" y="150" width="105" height="150" rx="8" fill="color-mix(in srgb, var(--green) 13%, var(--surface))" stroke="color-mix(in srgb, var(--green) 55%, var(--surface))" stroke-width="2"></rect>
+        <text class="rm-min" x="597" y="196" text-anchor="middle">Sala nº 2</text>
+        <text class="rm-ocup" x="597" y="228" text-anchor="middle">7º período</text>
+        <text class="rm-ocup" x="597" y="246" text-anchor="middle">Eng. Civil</text>
+        <g class="lupa" transform="translate(633,168)"><circle r="9" fill="var(--green)"></circle><text x="0" y="4" text-anchor="middle" font-size="11" fill="#fff">→</text></g>
+      </a>
+      <a class="sala" href="horarios.html?sala=3" style="--c: var(--green)" aria-label="Sala 3, 10º e 9º períodos de Engenharia Civil — ver horário">
+        <rect class="corpo" x="650" y="150" width="110" height="150" rx="8" fill="color-mix(in srgb, var(--green) 13%, var(--surface))" stroke="color-mix(in srgb, var(--green) 55%, var(--surface))" stroke-width="2"></rect>
+        <text class="rm-min" x="705" y="196" text-anchor="middle">Sala nº 3</text>
+        <text class="rm-ocup" x="705" y="228" text-anchor="middle">10º/9º período</text>
+        <text class="rm-ocup" x="705" y="246" text-anchor="middle">Eng. Civil</text>
+        <g class="lupa" transform="translate(743,168)"><circle r="9" fill="var(--green)"></circle><text x="0" y="4" text-anchor="middle" font-size="11" fill="#fff">→</text></g>
+      </a>
+      <a class="sala" href="horarios.html?sala=4" style="--c: var(--blue)" aria-label="Sala 4, 10º período de Direito — ver horário">
+        <rect class="corpo" x="760" y="150" width="115" height="150" rx="8" fill="color-mix(in srgb, var(--blue) 13%, var(--surface))" stroke="color-mix(in srgb, var(--blue) 55%, var(--surface))" stroke-width="2"></rect>
+        <text class="rm-min" x="817" y="196" text-anchor="middle">Sala nº 4</text>
+        <text class="rm-ocup" x="817" y="228" text-anchor="middle">10º período</text>
+        <text class="rm-ocup" x="817" y="246" text-anchor="middle">Direito</text>
+        <g class="lupa" transform="translate(858,168)"><circle r="9" fill="var(--blue)"></circle><text x="0" y="4" text-anchor="middle" font-size="11" fill="#fff">→</text></g>
+      </a>
+      <a class="sala" href="horarios.html?sala=5" style="--c: var(--blue)" aria-label="Sala 5, 7º período de Direito — ver horário">
+        <rect class="corpo" x="875" y="150" width="110" height="150" rx="8" fill="color-mix(in srgb, var(--blue) 13%, var(--surface))" stroke="color-mix(in srgb, var(--blue) 55%, var(--surface))" stroke-width="2"></rect>
+        <text class="rm-min" x="930" y="196" text-anchor="middle">Sala nº 5</text>
+        <text class="rm-ocup" x="930" y="228" text-anchor="middle">7º período</text>
+        <text class="rm-ocup" x="930" y="246" text-anchor="middle">Direito</text>
+        <g class="lupa" transform="translate(968,168)"><circle r="9" fill="var(--blue)"></circle><text x="0" y="4" text-anchor="middle" font-size="11" fill="#fff">→</text></g>
+      </a>
+      <a class="sala" href="horarios.html?sala=6" style="--c: var(--blue)" aria-label="Sala 6, 6º período de Direito — ver horário">
+        <rect class="corpo" x="985" y="150" width="110" height="150" rx="8" fill="color-mix(in srgb, var(--blue) 13%, var(--surface))" stroke="color-mix(in srgb, var(--blue) 55%, var(--surface))" stroke-width="2"></rect>
+        <text class="rm-min" x="1040" y="196" text-anchor="middle">Sala nº 6</text>
+        <text class="rm-ocup" x="1040" y="228" text-anchor="middle">6º período</text>
+        <text class="rm-ocup" x="1040" y="246" text-anchor="middle">Direito</text>
+        <g class="lupa" transform="translate(1078,168)"><circle r="9" fill="var(--blue)"></circle><text x="0" y="4" text-anchor="middle" font-size="11" fill="#fff">→</text></g>
+      </a>
+      <a class="sala" href="horarios.html?sala=7" style="--c: var(--blue)" aria-label="Sala 7, 4º período de Direito — ver horário">
+        <rect class="corpo" x="1095" y="150" width="105" height="150" rx="8" fill="color-mix(in srgb, var(--blue) 13%, var(--surface))" stroke="color-mix(in srgb, var(--blue) 55%, var(--surface))" stroke-width="2"></rect>
+        <text class="rm-min" x="1147" y="196" text-anchor="middle">Sala nº 7</text>
+        <text class="rm-ocup" x="1147" y="228" text-anchor="middle">4º período</text>
+        <text class="rm-ocup" x="1147" y="246" text-anchor="middle">Direito</text>
+        <g class="lupa" transform="translate(1183,168)"><circle r="9" fill="var(--blue)"></circle><text x="0" y="4" text-anchor="middle" font-size="11" fill="#fff">→</text></g>
+      </a>
+
+      <!-- ══ ALA SUL ══ -->
+      <g style="--c: var(--amber)">
+        <rect x="40" y="432" width="185" height="150" rx="8" fill="color-mix(in srgb, var(--amber) 12%, var(--surface))" stroke="color-mix(in srgb, var(--amber) 50%, var(--surface))" stroke-width="2"></rect>
+        <g transform="translate(62,462)" stroke="var(--amber)" stroke-width="2.2" fill="none" stroke-linecap="round">
+          <path d="M2 0v10a5 5 0 0010 0V0M7 10v18"></path>
+          <path d="M24 0c-4 0-6 5-6 11s2 8 6 8v9"></path>
+        </g>
+        <text class="rm-nome" x="62" y="530">Cantina</text>
+        <text class="rm-ocup" x="62" y="552">e dispensa</text>
+      </g>
+      <g style="--c: var(--cyan)">
+        <rect x="225" y="432" width="155" height="150" rx="8" fill="color-mix(in srgb, var(--cyan) 12%, var(--surface))" stroke="color-mix(in srgb, var(--cyan) 50%, var(--surface))" stroke-width="2"></rect>
+        <g transform="translate(247,462)" stroke="var(--cyan)" stroke-width="2.2" fill="none" stroke-linejoin="round">
+          <rect x="0" y="0" width="34" height="22" rx="3"></rect><path d="M12 22v6M22 22v6M8 28h18"></path>
+        </g>
+        <text class="rm-nome" x="247" y="530">Laboratório</text>
+        <text class="rm-ocup" x="247" y="552">de Informática</text>
+      </g>
+      <a class="sala" href="horarios.html?sala=10" style="--c: var(--blue)" aria-label="Sala 10, 2º período de Direito — ver horário">
+        <rect class="corpo" x="380" y="432" width="160" height="150" rx="8" fill="color-mix(in srgb, var(--blue) 13%, var(--surface))" stroke="color-mix(in srgb, var(--blue) 55%, var(--surface))" stroke-width="2"></rect>
+        <g transform="translate(402,462)" stroke="var(--blue)" stroke-width="2" fill="none" stroke-linecap="round">
+          <rect x="0" y="0" width="24" height="16" rx="2"></rect><path d="M6 20h12M12 16v4"></path>
+        </g>
+        <text class="rm-nome" x="402" y="512">Sala nº 10</text>
+        <text class="rm-ocup" x="402" y="536">2º período</text>
+        <text class="rm-ocup" x="402" y="554">Direito</text>
+        <g class="lupa" transform="translate(518,450)"><circle r="9" fill="var(--blue)"></circle><text x="0" y="4" text-anchor="middle" font-size="11" fill="#fff">→</text></g>
+      </a>
+      <g style="--c: var(--cyan)">
+        <rect x="540" y="432" width="180" height="150" rx="8" fill="color-mix(in srgb, var(--cyan) 12%, var(--surface))" stroke="color-mix(in srgb, var(--cyan) 50%, var(--surface))" stroke-width="2"></rect>
+        <g transform="translate(562,466)" fill="var(--cyan)" opacity=".85">
+          <rect x="0" y="0" width="9" height="7" rx="2"></rect><rect x="12" y="0" width="9" height="7" rx="2"></rect><rect x="24" y="0" width="9" height="7" rx="2"></rect>
+          <rect x="0" y="11" width="9" height="7" rx="2"></rect><rect x="12" y="11" width="9" height="7" rx="2"></rect><rect x="24" y="11" width="9" height="7" rx="2"></rect>
+          <rect x="6" y="24" width="21" height="4" rx="2"></rect>
+        </g>
+        <text class="rm-nome" x="562" y="530">Auditório</text>
+      </g>
+      <g style="--c: var(--cyan)">
+        <rect x="720" y="432" width="90" height="150" rx="8" fill="color-mix(in srgb, var(--cyan) 12%, var(--surface))" stroke="color-mix(in srgb, var(--cyan) 50%, var(--surface))" stroke-width="2"></rect>
+        <g transform="translate(752,468)" stroke="var(--cyan)" stroke-width="2.2" fill="none" stroke-linecap="round">
+          <circle cx="13" cy="5" r="5"></circle><path d="M13 10v6M13 16l-9 14M13 16l9 14"></path>
+        </g>
+        <text class="rm-ocup" x="765" y="528" text-anchor="middle">Lab. de</text>
+        <text class="rm-ocup" x="765" y="546" text-anchor="middle">Topografia</text>
+      </g>
+      <a class="sala" href="horarios.html?sala=9" style="--c: var(--green)" aria-label="Sala 9, 5º período de Engenharia Civil — ver horário">
+        <rect class="corpo" x="810" y="392" width="160" height="190" rx="8" fill="color-mix(in srgb, var(--green) 13%, var(--surface))" stroke="color-mix(in srgb, var(--green) 55%, var(--surface))" stroke-width="2"></rect>
+        <g transform="translate(832,424)" stroke="var(--green)" stroke-width="2" fill="none" stroke-linecap="round">
+          <rect x="0" y="0" width="24" height="16" rx="2"></rect><path d="M6 20h12M12 16v4"></path>
+        </g>
+        <text class="rm-nome" x="832" y="486">Sala nº 9</text>
+        <text class="rm-ocup" x="832" y="512">5º período</text>
+        <text class="rm-ocup" x="832" y="530">Engenharia Civil</text>
+        <g class="lupa" transform="translate(948,410)"><circle r="9" fill="var(--green)"></circle><text x="0" y="4" text-anchor="middle" font-size="11" fill="#fff">→</text></g>
+      </a>
+      <g style="--c: var(--cyan)">
+        <rect x="970" y="392" width="130" height="190" rx="8" fill="color-mix(in srgb, var(--cyan) 12%, var(--surface))" stroke="color-mix(in srgb, var(--cyan) 50%, var(--surface))" stroke-width="2"></rect>
+        <g transform="translate(1020,432)" stroke="var(--cyan)" stroke-width="2" fill="none">
+          <circle cx="15" cy="15" r="4" fill="var(--cyan)" stroke="none"></circle>
+          <ellipse cx="15" cy="15" rx="16" ry="7"></ellipse>
+          <ellipse cx="15" cy="15" rx="16" ry="7" transform="rotate(60 15 15)"></ellipse>
+          <ellipse cx="15" cy="15" rx="16" ry="7" transform="rotate(120 15 15)"></ellipse>
+        </g>
+        <text class="rm-nome" x="992" y="512">Laboratório</text>
+        <text class="rm-ocup" x="992" y="534">de Física</text>
+      </g>
+      <a class="sala" href="horarios.html?sala=8" style="--c: var(--green)" aria-label="Sala 8, 2º período de Engenharia Civil — ver horário">
+        <rect class="corpo" x="1100" y="392" width="100" height="190" rx="8" fill="color-mix(in srgb, var(--green) 13%, var(--surface))" stroke="color-mix(in srgb, var(--green) 55%, var(--surface))" stroke-width="2"></rect>
+        <text class="rm-min" x="1150" y="450" text-anchor="middle">Sala nº 8</text>
+        <text class="rm-ocup" x="1150" y="486" text-anchor="middle">2º período</text>
+        <text class="rm-ocup" x="1150" y="504" text-anchor="middle">Eng. Civil</text>
+        <g class="lupa" transform="translate(1183,410)"><circle r="9" fill="var(--green)"></circle><text x="0" y="4" text-anchor="middle" font-size="11" fill="#fff">→</text></g>
+      </a>
+
+      <!-- passagens -->
+      <path d="M150 582 V620" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="7 6" opacity=".75"></path>
+      <path d="M630 582 V620" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="7 6" opacity=".75"></path>
+
+      <!-- Prédio do Administrativo — Sala do NAE -->
+      <a class="sala" href="contato.html" style="--c: var(--orange)" aria-label="Prédio do Administrativo, onde fica a sala do NAE — ver atendimento">
+        <rect class="corpo" x="40" y="620" width="340" height="122" rx="8" fill="color-mix(in srgb, var(--orange) 12%, var(--surface))" stroke="color-mix(in srgb, var(--orange) 55%, var(--surface))" stroke-width="2"></rect>
+        <g transform="translate(64,648)" stroke="var(--orange)" stroke-width="2.2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M2 30V10l12-7 12 7v20"></path><path d="M0 30h28"></path><path d="M10 30v-9h8v9"></path>
+        </g>
+        <text class="rm-nome" x="106" y="666">Prédio do Administrativo</text>
+        <text class="rm-ocup" x="106" y="688">Sala do NAE · atendimento estudantil</text>
+        <text class="rm-ocup" x="106" y="708">Terças e quintas, 18h–19h</text>
+        <g class="lupa" transform="translate(354,640)"><circle r="9" fill="var(--orange)"></circle><text x="0" y="4" text-anchor="middle" font-size="11" fill="#fff">→</text></g>
+      </a>
+
+      <!-- Prédio anexo / NPJ -->
+      <g style="--c: var(--blue)">
+        <rect x="440" y="620" width="380" height="122" rx="8" fill="color-mix(in srgb, var(--blue) 10%, var(--surface))" stroke="color-mix(in srgb, var(--blue) 50%, var(--surface))" stroke-width="2"></rect>
+        <g transform="translate(466,656)" stroke="var(--blue)" stroke-width="2.2" fill="none" stroke-linejoin="round">
+          <path d="M0 12 L15 2 L30 12 V28 H0 z"></path><path d="M11 28v-10h8v10"></path>
+        </g>
+        <text class="rm-nome" x="516" y="672">Prédio Anexo — Sala do NPJ</text>
+        <text class="rm-ocup" x="516" y="696">Turmas de Prática Real · Direito</text>
+      </g>
+
+      <text class="rm-legenda" x="40" y="34">ALA NORTE</text>
+      <text class="rm-legenda" x="40" y="608">ALA SUL</text>
+    </svg>
+  </div>
+  <p class="dica-mapa">Planta esquemática baseada no Mapa de Salas 2026.2 da Unidade. As proporções e as posições dos prédios do administrativo e do anexo são aproximadas e servem para orientação.</p>
+
+  <div class="grid2">
+    <div class="card reveal" style="--c: var(--orange)">
+      <span class="rotulo">Núcleo de Apoio Estudantil</span>
+      <h3>Onde fica o NAE</h3>
+      <p>A sala do NAE fica no <b>Prédio do Administrativo</b> da Unidade Guanhães. Atendimento às terças e quintas, das 18h às 19h; às quartas, com agendamento prévio por e-mail.</p>
+      <div><a class="btn ghost" href="contato.html" style="--c: var(--orange)">Ver contato e horários →</a></div>
+    </div>
+
+    <div class="card reveal" style="--c: var(--blue)">
+      <span class="rotulo">Direito</span>
+      <h3>Salas do curso</h3>
+      <div class="lista-salas">
+        <a href="horarios.html?sala=4"><b>Sala nº 4</b> 10º período · Turma I<span class="seta">→</span></a>
+        <a href="horarios.html?sala=5"><b>Sala nº 5</b> 7º período · Turma II<span class="seta">→</span></a>
+        <a href="horarios.html?sala=6"><b>Sala nº 6</b> 6º período · Turma III<span class="seta">→</span></a>
+        <a href="horarios.html?sala=7"><b>Sala nº 7</b> 4º período · Turma IV<span class="seta">→</span></a>
+        <a href="horarios.html?sala=10"><b>Sala nº 10</b> 2º período · Turma V<span class="seta">→</span></a>
+      </div>
+      <p style="font-size:.9rem;color:var(--muted)">As turmas de Prática Real usam a sala do NPJ, no prédio anexo.</p>
+    </div>
+
+    <div class="card reveal" style="--c: var(--green)">
+      <span class="rotulo">Engenharia Civil</span>
+      <h3>Salas do curso</h3>
+      <div class="lista-salas">
+        <a href="horarios.html?sala=1"><b>Sala nº 1</b> Turmas extras<span class="seta">→</span></a>
+        <a href="horarios.html?sala=2"><b>Sala nº 2</b> 7º período · Turma II<span class="seta">→</span></a>
+        <a href="horarios.html?sala=3"><b>Sala nº 3</b> 10º/9º período · Turma I<span class="seta">→</span></a>
+        <a href="horarios.html?sala=8"><b>Sala nº 8</b> 2º período · Turma V<span class="seta">→</span></a>
+        <a href="horarios.html?sala=9"><b>Sala nº 9</b> 5º período · Turma III<span class="seta">→</span></a>
+        <a href="horarios.html?sala=11"><b>Sala nº 11</b> 3º período · Turma IV<span class="seta">→</span></a>
+      </div>
+    </div>
+
+    <div class="card reveal" style="--c: var(--cyan)">
+      <span class="rotulo">Estudo e prática</span>
+      <h3>Laboratórios e espaços</h3>
+      <ul class="limpa" style="--c: var(--cyan)">
+        <li><b>Biblioteca</b> — ala norte, ao lado dos banheiros</li>
+        <li><b>Laboratório de Informática</b> — ala sul, junto à cantina</li>
+        <li><b>Laboratório de Física</b> — ala sul, entre as salas 8 e 9</li>
+        <li><b>Laboratório de Topografia</b> — ala sul, ao lado do auditório</li>
+        <li><b>Auditório</b> — ala sul, ao centro</li>
+      </ul>
+    </div>
+
+    <div class="card reveal" style="--c: var(--amber)">
+      <span class="rotulo">Apoio</span>
+      <h3>Serviços e convivência</h3>
+      <ul class="limpa" style="--c: var(--amber)">
+        <li><b>Cantina e dispensa</b> — início da ala sul</li>
+        <li><b>Banheiros</b> — início da ala norte</li>
+        <li><b>Pátio</b> — área central de convivência</li>
+        <li><b>Secretaria acadêmica</b> — atendimento da unidade</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card col reveal" style="--c: var(--green)">
+    <span class="rotulo">Localização</span>
+    <h3>Como chegar</h3>
+    <p>Rodovia BR-259, nº 2250 — Bairro Nova União, Guanhães/MG, CEP 39740-000.</p>
+    <div>
+      <a class="btn" style="--c: var(--green)" href="https://www.google.com/maps/search/?api=1&amp;query=UEMG+Unidade+Guanh%C3%A3es+BR-259+2250+Nova+Uni%C3%A3o+Guanh%C3%A3es+MG" target="_blank" rel="noopener noreferrer">Abrir no Google Maps →</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <p>NAE — Núcleo de Apoio Estudantil · UEMG Unidade Guanhães<br>Coordenação: Jonatan Barbosa Silva</p>
+    <div class="foot-links">
+      <a href="index.html">Início</a>
+      <a href="email.html">E-mail institucional</a>
+      <a href="horarios.html">Horários</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <p class="assinatura">Desenvolvido por <b>Jonatan Barbosa Silva</b></p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
