@@ -193,8 +193,11 @@
 
   aplicar();
 
-  /* ── Chegada pelo mapa: horarios.html?sala=6 ──────── */
+  /* ── Chegada pelo mapa: horarios.html?sala=6#sala-6 ─ */
   var pedido = new URLSearchParams(window.location.search).get('sala');
+  if (!pedido && /^#sala-\d+$/.test(window.location.hash)) {
+    pedido = window.location.hash.replace('#sala-', '');
+  }
   if (pedido) {
     var alvo = lista.querySelector('.turma[data-sala="' + pedido.replace(/[^0-9]/g, '') + '"]');
     if (alvo) {
