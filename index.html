@@ -2,214 +2,28 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NAE Guanhães — Núcleo de Apoio ao Estudante | UEMG</title>
-<meta name="description" content="Portal do Núcleo de Apoio ao Estudante da UEMG — Unidade Guanhães: e-mail institucional, horários de aulas, mapa do campus e atendimento.">
-<link rel="icon" href="assets/favicon-nae.png" type="image/png">
-<meta name="theme-color" content="#40688B">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="assets/icone-192.png">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="NAE Guanhães — Núcleo de Apoio ao Estudante">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="NAE Guanhães — Núcleo de Apoio ao Estudante | UEMG">
-<meta property="og:description" content="Portal do Núcleo de Apoio ao Estudante da UEMG — Unidade Guanhães: e-mail institucional, horários de aulas, mapa do campus e atendimento.">
-<meta property="og:url" content="https://jonbarbosas.github.io/nae-guanhaes/">
-<meta property="og:image" content="https://jonbarbosas.github.io/nae-guanhaes/assets/og-nae.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/estilo.css">
+<title>O site do NAE mudou de endereço</title>
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://naeguanhaes.github.io/">
+<meta http-equiv="refresh" content="0; url=https://naeguanhaes.github.io/">
+<style>
+  body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F2F6FA;
+       font-family:"Segoe UI",system-ui,sans-serif;color:#16303F;text-align:center;padding:2rem}
+  .cx{max-width:34rem;display:flex;flex-direction:column;gap:1rem;align-items:center}
+  h1{font-family:Palatino Linotype,Georgia,serif;font-size:1.7rem;margin:0;color:#22475F}
+  p{margin:0;color:#35566C;line-height:1.6}
+  a.btn{background:#35618A;color:#fff;text-decoration:none;border-radius:99px;
+        padding:.7rem 1.5rem;font-weight:700;box-shadow:0 12px 28px -18px #35618A}
+  code{background:#E8F0F6;border-radius:6px;padding:.1rem .4rem;font-size:.9em}
+</style>
 </head>
 <body>
-
-<a class="pular" href="#conteudo">Pular para o conteúdo</a>
-
-<div id="avisos"></div>
-
-<header class="topbar">
-  <div class="wrap topbar-in">
-    <a class="brand" href="index.html">
-      <img class="marca" src="assets/logo-nae.png" alt="NAE — Núcleo de Apoio ao Estudante · Unidade Guanhães">
-    </a>
-    <div class="unidade">
-      <b>UEMG — Unidade Guanhães</b><br>
-      Coordenação: Jonatan Barbosa Silva
-    </div>
+  <div class="cx">
+    <h1>O site do NAE mudou de endereço</h1>
+    <p>Estamos levando você para o novo endereço. Se não acontecer em alguns segundos, use o botão abaixo.</p>
+    <p><code>naeguanhaes.github.io</code></p>
+    <a class="btn" href="https://naeguanhaes.github.io/">Ir para o site do NAE →</a>
   </div>
-</header>
-
-<nav class="nav" aria-label="Seções do site">
-  <div class="wrap nav-in">
-    <a class="nav-link" href="index.html" aria-current="page" style="--c: var(--azul-esc)"><i class="dot"></i>Início</a>
-    <a class="nav-link" href="email.html" style="--c: var(--azul)"><i class="dot"></i>Ajuda com E-mail Institucional</a>
-    <a class="nav-link" href="horarios.html" style="--c: var(--turquesa)"><i class="dot"></i>Horários de Aulas</a>
-    <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário Acadêmico</a>
-    <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do Campus</a>
-    <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>Sobre o NAE</a>
-    <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
-  </div>
-</nav>
-
-<main class="wrap stack" id="conteudo">
-
-  <div class="hero">
-    <div class="hero-in">
-      <span class="eyebrow">UEMG · Unidade Guanhães</span>
-      <h1>Tudo o que o estudante precisa, em um lugar só</h1>
-      <p>Acesso ao e-mail institucional, horários das aulas, mapa do campus e o apoio do Núcleo. Escolha abaixo por onde começar.</p>
-      <div class="hero-acoes">
-        <a class="btn" href="email.html">Guia do e-mail institucional →</a>
-        <a class="btn ghost" href="horarios.html">Ver horários 2026.2</a>
-        <button class="btn ghost" type="button" id="btn-instalar" hidden>Instalar no celular</button>
-      </div>
-    </div>
-    <img class="hero-marca" src="assets/simbolo-nae.png" alt="" aria-hidden="true">
-  </div>
-
-  <section id="painel-agora" aria-label="Aula de hoje"></section>
-</div>
-
-  <section class="carrossel" data-carrossel aria-label="Serviços do NAE">
-    <div class="carrossel-topo">
-      <div class="titulo-sec" style="--c: var(--blue)">
-        <span class="eyebrow" style="--c: var(--blue)">Serviços</span>
-        <h2>Clique e vá direto ao ponto</h2>
-      </div>
-      <div class="carrossel-ctrl">
-        <button class="seta-btn" type="button" data-seta="prev" aria-label="Item anterior">←</button>
-        <button class="seta-btn" type="button" data-seta="next" aria-label="Próximo item">→</button>
-      </div>
-    </div>
-
-    <div class="trilho">
-
-      <a class="porta" href="email.html" style="--c: var(--blue)">
-        <span class="porta-ico" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect>
-            <path d="M3 7l9 6 9-6"></path>
-          </svg>
-        </span>
-        <span class="porta-tag">Passo a passo · 10 etapas</span>
-        <span class="porta-h">Ajuda com o e-mail institucional</span>
-        <span class="porta-p">Primeiro acesso e redefinição de senha, explicados tela por tela.</span>
-        <span class="porta-seta" aria-hidden="true">→</span>
-      </a>
-
-      <a class="porta" href="horarios.html" style="--c: var(--cyan)">
-        <span class="porta-ico" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4.5" width="18" height="16" rx="2.5"></rect>
-            <path d="M3 9.5h18M8 2.5v4M16 2.5v4M7.5 13.5h3M7.5 17h6"></path>
-          </svg>
-        </span>
-        <span class="porta-tag">Semestre 2026.2 · 12 turmas</span>
-        <span class="porta-h">Horários de aulas</span>
-        <span class="porta-p">Grade de Direito e Engenharia Civil, com busca por disciplina ou professor.</span>
-        <span class="porta-seta" aria-hidden="true">→</span>
-      </a>
-
-      <a class="porta" href="mapa.html" style="--c: var(--green)">
-        <span class="porta-ico" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 6.5l6-2.5 6 2.5 6-2.5v13l-6 2.5-6-2.5-6 2.5z"></path>
-            <path d="M9 4v13M15 6.5v13"></path>
-          </svg>
-        </span>
-        <span class="porta-tag">Planta ilustrada</span>
-        <span class="porta-h">Mapa do campus</span>
-        <span class="porta-p">Onde fica cada sala, laboratório e serviço — inclusive a sala do NAE.</span>
-        <span class="porta-seta" aria-hidden="true">→</span>
-      </a>
-
-      <a class="porta" href="calendario.html" style="--c: var(--lilas)">
-        <span class="porta-ico" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4.5" width="18" height="16" rx="3"></rect>
-            <path d="M3 9.5h18M8 2.5v4M16 2.5v4"></path><circle cx="8.5" cy="14" r="1.3" fill="currentColor" stroke="none"></circle><circle cx="12" cy="14" r="1.3" fill="currentColor" stroke="none"></circle><circle cx="15.5" cy="14" r="1.3" fill="currentColor" stroke="none"></circle>
-          </svg>
-        </span>
-        <span class="porta-tag">Ano de 2026</span>
-        <span class="porta-h">Calendário acadêmico</span>
-        <span class="porta-p">Feriados, prazos de matrícula, trancamento, exames e fim de semestre — mês a mês.</span>
-        <span class="porta-seta" aria-hidden="true">→</span>
-      </a>
-
-      <a class="porta" href="contato.html" style="--c: var(--orange)">
-        <span class="porta-ico" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 21s7-5.4 7-11a7 7 0 10-14 0c0 5.6 7 11 7 11z"></path>
-            <circle cx="12" cy="10" r="2.6"></circle>
-          </svg>
-        </span>
-        <span class="porta-tag">Prédio do Administrativo</span>
-        <span class="porta-h">Sala do NAE e atendimento</span>
-        <span class="porta-p">Terças e quintas, das 18h às 19h. Quartas, com agendamento por e-mail.</span>
-        <span class="porta-seta" aria-hidden="true">→</span>
-      </a>
-
-      <a class="porta" href="sobre.html" style="--c: var(--amber)">
-        <span class="porta-ico" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="9" cy="8" r="3.2"></circle>
-            <path d="M3 19.5c.6-3.4 3-5.2 6-5.2s5.4 1.8 6 5.2"></path>
-            <path d="M16.5 6.2a3.2 3.2 0 010 5.6M18.6 3.8a6.5 6.5 0 010 10.4"></path>
-          </svg>
-        </span>
-        <span class="porta-tag">Quem somos</span>
-        <span class="porta-h">Sobre o NAE</span>
-        <span class="porta-p">Acolhimento, apoio pedagógico, assistência estudantil e acessibilidade.</span>
-        <span class="porta-seta" aria-hidden="true">→</span>
-      </a>
-
-    </div>
-
-    <div class="pontos" role="tablist" aria-label="Selecionar item"></div>
-  </section>
-
-  <div class="atalhos">
-    <span class="atalhos-rot">Dúvidas rápidas</span>
-    <a class="atalho" href="email.html#meu-endereco" style="--c: var(--blue)">Qual é o meu e-mail?</a>
-    <a class="atalho" href="email.html#passo-a-passo" style="--c: var(--blue)">Esqueci minha senha</a>
-    <a class="atalho" href="mapa.html" style="--c: var(--green)">Onde fica minha sala?</a>
-    <a class="atalho" href="horarios.html" style="--c: var(--cyan)">Que aula tenho hoje?</a>
-    <a class="atalho" href="contato.html" style="--c: var(--orange)">Onde fica o NAE?</a>
-    <a class="atalho" href="calendario.html" style="--c: var(--lilas)">Quando é o próximo feriado?</a>
-  </div>
-
-  <div class="grid2">
-    <div class="card reveal" style="--c: var(--orange)">
-      <span class="rotulo">Atendimento</span>
-      <h3>O NAE fica no Prédio do Administrativo</h3>
-      <p>Atendimento presencial às <b>terças e quintas, das 18h às 19h</b>. Às quartas-feiras, mediante agendamento prévio por e-mail.</p>
-      <div><a class="btn ghost" href="contato.html" style="--c: var(--orange)">Ver como chegar e falar com o NAE →</a></div>
-    </div>
-    <div class="card reveal" style="--c: var(--cyan)">
-      <span class="rotulo">Novidades</span>
-      <h3>Esta página está crescendo</h3>
-      <p>Em breve: editais e bolsas, calendário acadêmico e materiais de apoio. Já estão no ar o guia do e-mail, os horários 2026.2 e o mapa do campus.</p>
-    </div>
-  </div>
-
-</main>
-
-<footer>
-  <div class="wrap foot-in">
-    <p>NAE — Núcleo de Apoio ao Estudante · UEMG Unidade Guanhães<br>Coordenação: Jonatan Barbosa Silva</p>
-    <div class="foot-links">
-      <a href="email.html">E-mail institucional</a>
-      <a href="horarios.html">Horários</a>
-      <a href="mapa.html">Mapa</a>
-      <a href="contato.html">Contato</a>
-    </div>
-    <p class="assinatura">Desenvolvido por <b>Jonatan Barbosa Silva</b></p>
-  </div>
-</footer>
-
-<script src="assets/dados-avisos.js"></script>
-<script src="assets/dados-horarios.js"></script>
-<script src="assets/site.js"></script>
-<script src="assets/horarios.js"></script>
+  <script>location.replace('https://naeguanhaes.github.io/');</script>
 </body>
 </html>
