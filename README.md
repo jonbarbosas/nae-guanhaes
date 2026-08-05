@@ -1,6 +1,6 @@
-# NAE Guanhães — site do Núcleo de Apoio Estudantil
+# NAE Guanhães — site do Núcleo de Apoio ao Estudante
 
-Site estático do Núcleo de Apoio Estudantil (NAE) da **UEMG — Unidade Guanhães**.
+Site estático do Núcleo de Apoio ao Estudante (NAE) da **UEMG — Unidade Guanhães**.
 Sem dependências, sem build: são páginas HTML, uma folha de estilo e dois scripts.
 
 **Coordenação:** Jonatan Barbosa Silva
@@ -33,8 +33,9 @@ site mudar, altere `URL_SITE` no final de `cartaz.html`.
 assets/estilo.css     folha de estilo única (tema claro e escuro)
 assets/site.js        carrossel, revelação ao rolar, montador de e-mail
 assets/horarios.js    dados das 12 turmas + filtro, busca e link do mapa
-assets/logo.svg       logo horizontal do NAE
-assets/favicon.svg    ícone do site
+assets/logo-nae.png    marca oficial do NAE (assinatura completa)
+assets/simbolo-nae.png símbolo isolado da marca
+assets/favicon-nae.png ícone do site
 ```
 
 ## Publicar no GitHub Pages

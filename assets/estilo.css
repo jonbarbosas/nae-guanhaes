@@ -4,6 +4,8 @@
    ═══════════════════════════════════════════════════════ */
 
 :root {
+  --marca-azul:      #40688B;
+  --marca-vermelho:  #D91F35;
   --navy:   #0E3D60;
   --blue:   #1A6BA0;
   --cyan:   #1D93A9;
@@ -38,6 +40,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --marca-azul: #6E9EC2;
+    --marca-vermelho: #E8556A;
     --navy: #5AA3D0; --blue: #62ABDD; --cyan: #45BCD2; --aqua: #7FD6E3;
     --green: #56C489; --amber: #E4AE45; --orange: #E88B54; --red: #E4796A;
     --paper: #081420; --surface: #0F1F2C; --surface-2: #142433;
@@ -50,6 +54,8 @@
 }
 
 :root[data-theme="dark"] {
+  --marca-azul: #6E9EC2;
+  --marca-vermelho: #E8556A;
   --navy: #5AA3D0; --blue: #62ABDD; --cyan: #45BCD2; --aqua: #7FD6E3;
   --green: #56C489; --amber: #E4AE45; --orange: #E88B54; --red: #E4796A;
   --paper: #081420; --surface: #0F1F2C; --surface-2: #142433;
@@ -61,6 +67,8 @@
 }
 
 :root[data-theme="light"] {
+  --marca-azul: #40688B;
+  --marca-vermelho: #D91F35;
   --navy: #0E3D60; --blue: #1A6BA0; --cyan: #1D93A9; --aqua: #57C0CE;
   --green: #2C9560; --amber: #D08D18; --orange: #D1642B; --red: #B93A2C;
   --paper: #EFF4F8; --surface: #FFFFFF; --surface-2: #F5F9FC;
@@ -130,34 +138,33 @@ p  { margin: 0; }
 }
 
 /* ── Cabeçalho ────────────────────────────────────────── */
+/* Fundo branco fixo nos dois temas: a marca institucional tem
+   cores próprias e precisa de um fundo neutro para respeitar. */
 .topbar {
-  background:
-    radial-gradient(120% 180% at 88% -40%, rgba(255,255,255,.22), transparent 60%),
-    linear-gradient(112deg, #0A2E4B 0%, #14567F 55%, #17849B 100%);
-  color: #FFFFFF; position: relative; overflow: hidden;
-}
-.topbar::before {
-  content: ""; position: absolute; inset: 0;
-  background: repeating-linear-gradient(128deg, rgba(255,255,255,.05) 0 1px, transparent 1px 15px);
-  pointer-events: none;
+  background: #FFFFFF;
+  color: #1D3D52;
+  position: relative;
+  border-bottom: 1px solid #E3EBF1;
 }
 .topbar::after {
-  content: ""; position: absolute; inset: auto 0 0 0; height: 4px;
-  background: linear-gradient(90deg, var(--amber) 0 25%, var(--green) 25% 50%, var(--aqua) 50% 75%, var(--orange) 75% 100%);
-  opacity: .92;
+  content: ""; position: absolute; inset: auto 0 -4px 0; height: 4px;
+  background: linear-gradient(90deg, var(--marca-azul) 0 60%, var(--marca-vermelho) 60% 100%);
 }
 .topbar-in {
-  position: relative; z-index: 1;
   display: flex; align-items: center; gap: var(--s3);
-  flex-wrap: wrap; padding-block: var(--s3) calc(var(--s3) + 4px);
+  flex-wrap: wrap; padding-block: var(--s3);
 }
-.brand { display: flex; align-items: center; gap: .9rem; text-decoration: none; color: inherit; }
-.brand:hover { color: inherit; }
-.brand svg { display: block; flex: none; }
-.brand-name { font-family: var(--serif); font-size: 1.75rem; font-weight: 700; letter-spacing: .06em; line-height: 1; }
-.brand-sub { font-size: .78rem; opacity: .85; letter-spacing: .05em; margin-top: .35rem; }
-.unidade { margin-left: auto; font-size: .76rem; text-align: right; line-height: 1.55; opacity: .92; }
-.unidade b { font-weight: 700; letter-spacing: .02em; }
+.brand { display: flex; align-items: center; text-decoration: none; }
+.brand .marca {
+  display: block; height: 4.3rem; width: auto;
+}
+@media (max-width: 560px) { .brand .marca { height: 3.2rem; } }
+
+.unidade {
+  margin-left: auto; font-size: .76rem; text-align: right;
+  line-height: 1.55; color: #5A7288;
+}
+.unidade b { font-weight: 700; letter-spacing: .02em; color: var(--marca-azul); display: block; }
 
 /* ── Navegação ────────────────────────────────────────── */
 .nav {
@@ -275,7 +282,12 @@ ul.limpa li::before { content: ""; width: .34rem; height: .34rem; border-radius:
 .hero .btn { background: #fff; color: #0B3251; box-shadow: none; }
 .hero .btn.ghost { background: rgba(255,255,255,.1); color: #fff; border-color: rgba(255,255,255,.42); }
 .hero .btn.ghost:hover { background: rgba(255,255,255,.2); color: #fff; }
-.hero-marca { position: absolute; right: -2rem; bottom: -3rem; opacity: .15; pointer-events: none; }
+.hero-marca {
+  position: absolute; right: 1.5rem; bottom: -2.5rem;
+  height: 17rem; width: auto; opacity: .16;
+  filter: brightness(0) invert(1);
+  pointer-events: none;
+}
 @media (max-width: 760px) { .hero-marca { display: none; } }
 
 /* ── Carrossel ────────────────────────────────────────── */
