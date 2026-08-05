@@ -1,0 +1,22 @@
+{
+  "name": "NAE Guanhães — Núcleo de Apoio ao Estudante",
+  "short_name": "NAE Guanhães",
+  "description": "E-mail institucional, horários de aulas, calendário acadêmico e mapa do campus da UEMG — Unidade Guanhães.",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F2F6FA",
+  "theme_color": "#40688B",
+  "icons": [
+    { "src": "assets/icone-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Horários de aulas", "url": "./horarios.html" },
+    { "name": "Mapa do campus", "url": "./mapa.html" },
+    { "name": "Calendário acadêmico", "url": "./calendario.html" }
+  ]
+}

@@ -6,11 +6,26 @@
 <title>Horários de aulas 2026.2 — NAE Guanhães | UEMG</title>
 <meta name="description" content="Grade de horários 2026.2 dos cursos de Direito e Engenharia Civil da UEMG — Unidade Guanhães.">
 <link rel="icon" href="assets/favicon-nae.png" type="image/png">
+<meta name="theme-color" content="#40688B">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icone-192.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NAE Guanhães — Núcleo de Apoio ao Estudante">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Horários de aulas 2026.2 — NAE Guanhães | UEMG">
+<meta property="og:description" content="Grade de horários 2026.2 dos cursos de Direito e Engenharia Civil da UEMG — Unidade Guanhães.">
+<meta property="og:url" content="https://jonbarbosas.github.io/nae-guanhaes/horarios.html">
+<meta property="og:image" content="https://jonbarbosas.github.io/nae-guanhaes/assets/og-nae.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/estilo.css">
 </head>
 <body>
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<div id="avisos"></div>
 
 <header class="topbar">
   <div class="wrap topbar-in">
@@ -26,12 +41,13 @@
 
 <nav class="nav" aria-label="Seções do site">
   <div class="wrap nav-in">
-    <a class="nav-link" href="index.html" style="--c: var(--navy)"><i class="dot"></i>Início</a>
-    <a class="nav-link" href="email.html" style="--c: var(--blue)"><i class="dot"></i>Ajuda com E-mail Institucional</a>
-    <a class="nav-link" href="horarios.html" aria-current="page" style="--c: var(--cyan)"><i class="dot"></i>Horários de Aulas</a>
-    <a class="nav-link" href="mapa.html" style="--c: var(--green)"><i class="dot"></i>Mapa do Campus</a>
-    <a class="nav-link" href="sobre.html" style="--c: var(--amber)"><i class="dot"></i>Sobre o NAE</a>
-    <a class="nav-link" href="contato.html" style="--c: var(--orange)"><i class="dot"></i>Fale com o NAE</a>
+    <a class="nav-link" href="index.html" style="--c: var(--azul-esc)"><i class="dot"></i>Início</a>
+    <a class="nav-link" href="email.html" style="--c: var(--azul)"><i class="dot"></i>Ajuda com E-mail Institucional</a>
+    <a class="nav-link" href="horarios.html" aria-current="page" style="--c: var(--turquesa)"><i class="dot"></i>Horários de Aulas</a>
+    <a class="nav-link" href="calendario.html" style="--c: var(--lilas)"><i class="dot"></i>Calendário Acadêmico</a>
+    <a class="nav-link" href="mapa.html" style="--c: var(--verde)"><i class="dot"></i>Mapa do Campus</a>
+    <a class="nav-link" href="sobre.html" style="--c: var(--ambar)"><i class="dot"></i>Sobre o NAE</a>
+    <a class="nav-link" href="contato.html" style="--c: var(--coral)"><i class="dot"></i>Fale com o NAE</a>
   </div>
 </nav>
 
@@ -47,6 +63,8 @@
       com a sala de cada turma. Filtre pelo curso ou busque por disciplina, professor, período ou sala.
     </p>
   </div>
+
+  <section id="painel-agora" aria-label="Aula de hoje"></section>
 
   <div class="filtros">
     <div class="chips" role="group" aria-label="Filtrar por curso">
@@ -67,13 +85,23 @@
 
   <div id="lista-turmas"></div>
 
-  <p class="dica-mapa">Fonte: quadro oficial de horários da Unidade Guanhães — 2026.2. Alterações pontuais são divulgadas pela coordenação de curso.</p>
+  <p class="dica-mapa" style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center">
+    <span class="atualizado" data-atualizado="horarios"></span>
+    Fonte: quadro oficial de horários da Unidade Guanhães — 2026.2. Alterações pontuais são divulgadas pela coordenação de curso.
+  </p>
 
   <div class="card col reveal" style="--c: var(--green)">
     <span class="rotulo">Não achou sua sala?</span>
     <h3>Veja onde ela fica</h3>
     <p>O mapa do campus mostra a planta da unidade com todas as salas, laboratórios e serviços.</p>
-    <div><a class="btn ghost" href="mapa.html" style="--c: var(--green)">Abrir o mapa do campus →</a></div>
+    <div class="compartilhar">
+      <a class="btn ghost" href="mapa.html" style="--c: var(--verde)">Abrir o mapa do campus →</a>
+      <a class="btn ghost" data-compartilhar
+         data-titulo="Horários de aulas — NAE Guanhães"
+         data-texto="Os horários das aulas da UEMG Guanhães estão aqui:"
+         data-url="https://jonbarbosas.github.io/nae-guanhaes/horarios.html"
+         style="--c: var(--turquesa)">Enviar para um colega</a>
+    </div>
   </div>
 
 </main>
@@ -91,7 +119,9 @@
   </div>
 </footer>
 
-<script src="assets/horarios.js"></script>
+<script src="assets/dados-avisos.js"></script>
+<script src="assets/dados-horarios.js"></script>
 <script src="assets/site.js"></script>
+<script src="assets/horarios.js"></script>
 </body>
 </html>
